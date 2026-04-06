@@ -173,6 +173,8 @@
       font-weight: 500;
       line-height: 1.45;
       margin-bottom: .3rem;
+      display: block;
+      font-weight: bold;
     }
     .jmp-badge {
       display: inline-block;
@@ -192,6 +194,8 @@
       color: var(--text-2);
       font-style: italic;
       margin-bottom: .6rem;
+    margin-left: 10px; /* Creates a gap between title and author */
+    font-weight: normal; /* Optional: makes the author name look distinct from the title */
     }
     .paper-meta a { color: var(--blue); }
 
@@ -376,11 +380,17 @@
         </p>
       </div>
 
-<div class="paper"> 
-  <div class="paper-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
-  <p class="paper-meta"> with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
-  </p> <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ Abstract</button> 
-  <p class="abstract" id="abs3"> 
+    <div class="paper">
+  <div class="paper-title">
+    Full-Day Kindergarten Mandates and Child Maltreatment
+    <span class="paper-meta">
+      with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
+    </span>
+  </div>
+
+  <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ Abstract</button>
+  
+  <p class="abstract" id="abs3">
     This study examines the effect of state-mandated full-day kindergarten (FDK) expansion on child maltreatment using 
     NCANDS child-level data and NVSS mortality records. Leveraging the staggered rollout of FDK adoption across states 
     with advanced difference-in-differences methods, we find that FDK policies lead to an increase of 3.5 physical abuse
@@ -389,9 +399,8 @@
     Supporting this interpretation, educator-filed physical abuse reports rise by approximately 30%, reflecting enhanced 
     detection capacity among teachers and school staff. Furthermore, the observed increases in reports from parents and 
     neighbors imply that FDK may foster stronger community awareness and social support networks. 
-  </p> 
-</div> 
-    </div>
+  </p>
+</div>
 
     <div class="research-section">
       <h2 class="section-heading">Work in Progress</h2>
