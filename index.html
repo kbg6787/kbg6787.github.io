@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bogyung Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-2: #f7f6f3;
+      --bg-3: #f0ede8;
+      --text: #1a1a18;
+      --text-2: #5a5a56;
+      --text-3: #999992;
+      --border: rgba(0,0,0,0.10);
+      --border-2: rgba(0,0,0,0.18);
+      --blue: #185FA5;
+      --green: #0F6E56;
+      --green-bg: #E1F5EE;
+      --radius: 10px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a18;
+        --bg-2: #232320;
+        --bg-3: #2c2c28;
+        --text: #e8e6e0;
+        --text-2: #a0a099;
+        --text-3: #666660;
+        --border: rgba(255,255,255,0.10);
+        --border-2: rgba(255,255,255,0.18);
+        --blue: #6aabf7;
+        --green: #3ecfa0;
+        --green-bg: #0a2e22;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── LAYOUT ── */
+    .site { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0 2.25rem;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 2.75rem;
+    }
+    .nav-name {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      cursor: pointer;
+      font-style: italic;
+    }
+    .nav-links { display: flex; gap: 1.75rem; }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-2);
+      letter-spacing: .02em;
+      transition: color .15s;
+      padding-bottom: 2px;
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .nav-links a.active {
+      color: var(--text);
+      border-bottom: 1.5px solid var(--text);
+    }
+
+    /* ── PAGES ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── HOME ── */
+    .home-grid {
+      display: grid;
+      grid-template-columns: 1fr 175px;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .photo-col img {
+      width: 100%;
+      border-radius: 6px;
+      border: 0.5px solid var(--border);
+      display: block;
+    }
+    .photo-placeholder {
+      width: 100%;
+      height: 230px;
+      background: var(--bg-2);
+      border-radius: 6px;
+      border: 0.5px dashed var(--border-2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-3);
+      font-size: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .photo-placeholder svg { opacity: .4; }
+    h1.name {
+      font-family: 'Lora', serif;
+      font-size: 2.1rem;
+      font-weight: 400;
+      margin-bottom: .3rem;
+      line-height: 1.2;
+    }
+    .title-line {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 1.5rem;
+      letter-spacing: .01em;
+    }
+    .bio { font-size: 14.5px; line-height: 1.85; margin-bottom: 1.25rem; }
+    .bio a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+
+    .ri-label {
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: .5rem;
+    }
+    .ri-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .ri-tag {
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      background: var(--bg-2);
+      border: 0.5px solid var(--border-2);
+      color: var(--text-2);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .market-note {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--text-2);
+      padding: 1rem 1.25rem;
+      border-left: 2.5px solid var(--green);
+      background: var(--green-bg);
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .contact-link {
+      font-size: 13px;
+      color: var(--blue);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .contact-link:hover { text-decoration: underline; }
+    .contact-sep { color: var(--border-2); }
+
+    /* ── DIVIDERS / SECTIONS ── */
+    .section-heading {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      padding-bottom: .6rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .research-section { margin-bottom: 3rem; }
+
+    /* ── PAPERS ── */
+    .paper {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .paper:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .paper-title {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: .3rem;
+    }
+    .jmp-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      padding: 2px 7px;
+      border-radius: 3px;
+      background: var(--green-bg);
+      color: var(--green);
+      margin-left: 7px;
+      vertical-align: middle;
+      letter-spacing: .04em;
+      font-weight: 500;
+      border: 0.5px solid var(--green);
+    }
+    .paper-meta {
+      font-size: 12.5px;
+      color: var(--text-2);
+      font-style: italic;
+      margin-bottom: .6rem;
+    }
+    .paper-meta a { color: var(--blue); }
+    .abstract {
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: var(--text-2);
+      margin-bottom: .75rem;
+    }
+    .paper-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .paper-link {
+      font-size: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--blue);
+      letter-spacing: .02em;
+    }
+    .paper-link:hover { text-decoration: underline; }
+
+    /* ── WIP ── */
+    .wip-item {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .wip-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .wip-title { font-size: 14px; font-weight: 500; line-height: 1.45; margin-bottom: .25rem; }
+    .wip-authors { font-size: 12.5px; color: var(--text-2); font-style: italic; margin-bottom: .35rem; }
+    .wip-authors a { color: var(--blue); }
+
+    /* ── PRE-DOCTORAL ── */
+    .predoc-label {
+      font-size: 11px;
+      color: var(--text-3);
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+    .predoc-list { font-size: 13.5px; color: var(--text-2); line-height: 1.9; }
+
+    /* ── TEACHING ── */
+    .teaching-section { margin-bottom: 2.5rem; }
+    .course {
+      margin-bottom: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg);
+    }
+    .course-title {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: .2rem;
+    }
+    .course-sub {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: .65rem;
+    }
+    .course-stats { display: flex; gap: 1.5rem; margin-bottom: .65rem; flex-wrap: wrap; }
+    .course-stat { font-size: 12.5px; font-family: 'IBM Plex Mono', monospace; color: var(--text-2); }
+    .course-stat strong { color: var(--green); font-weight: 500; }
+    .course-links { display: flex; gap: .75rem; }
+    .course-link {
+      font-size: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--blue);
+    }
+    .course-link:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+      font-size: 12px;
+      color: var(--text-3);
+      font-family: 'IBM Plex Mono', monospace;
+      text-align: center;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 540px) {
+      .home-grid { grid-template-columns: 1fr; }
+      .photo-col { display: none; }
+      nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .nav-links { gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+
+  <nav>
+    <span class="nav-name" onclick="show('home')">Bogyung Kim</span>
+    <div class="nav-links">
+      <a href="#" id="btn-home" class="active" onclick="show('home');return false;">Home</a>
+      <a href="#" id="btn-research" onclick="show('research');return false;">Research</a>
+      <a href="#" id="btn-teaching" onclick="show('teaching');return false;">Teaching</a>
+      <a href="https://kbg6787.github.io/cv/Bogyung_Kim_03_2026.pdf" target="_blank" id="btn-cv">CV</a>
+    </div>
+  </nav>
+
+  <!-- ════════════ HOME ════════════ -->
+  <div class="page active" id="page-home">
+    <div class="home-grid">
+      <div>
+        <h1 class="name">Bogyung Kim</h1>
+        <p class="title-line">PhD Candidate in Economics &middot; Georgia State University</p>
+
+        <p class="bio">
+          I am a PhD candidate in the Department of Economics at Georgia State University.
+          I work as a Graduate Research Assistant at
+          <a href="https://gpl.gsu.edu/" target="_blank">Georgia Policy Labs</a>.
+        </p>
+
+        <div class="ri-label">Research Interests</div>
+        <div class="ri-tags">
+          <span class="ri-tag">Economics of Education</span>
+          <span class="ri-tag">Labor Economics</span>
+        </div>
+
+        <div class="market-note">
+          I will be on the market in the 2026&ndash;27 academic year. My job-market paper
+          examines household-level spillovers from the financial aid program in higher education.
+        </div>
+
+        <div class="contact-row">
+          <a class="contact-link" href="mailto:bkim74@gsu.edu">bkim74@gsu.edu</a>
+          <span class="contact-sep">&middot;</span>
+          <a class="contact-link" href="https://kbg6787.github.io/cv/Bogyung_Kim_03_2026.pdf" target="_blank">CV</a>
+          <span class="contact-sep">&middot;</span>
+          <a class="contact-link" href="http://www.linkedin.com/in/bogyung-kim-060636243" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="photo-col">
+        <!-- Replace the placeholder below with your actual photo:
+             <img src="photo.jpg" alt="Bogyung Kim" />  -->
+        <div class="photo-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>photo.jpg</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ RESEARCH ════════════ -->
+  <div class="page" id="page-research">
+
+    <div class="research-section">
+      <h2 class="section-heading">Working Papers</h2>
+
+      <div class="paper">
+        <div class="paper-title">
+          Sibling Spillovers of Georgia&rsquo;s HOPE Scholarship
+          <span class="jmp-badge">Job Market Paper</span>
+        </div>
+        <p class="abstract">
+          Does college financial aid generate benefits beyond the direct recipient? This paper
+          investigates the intra-household spillover effects of Georgia&rsquo;s HOPE Scholarship
+          on the postsecondary enrollment of younger siblings. Utilizing student-level
+          administrative records from a school district linked to National Student Clearinghouse
+          data, I employ a regression discontinuity design centered on the scholarship&rsquo;s
+          3.0 GPA eligibility threshold. I contribute the evidence of financial aid spillovers
+          on nonrecipients&rsquo; college enrollment and extend the literature on sibling
+          spillovers by showing how reducing the cost of college for one child can shape younger
+          sibling&rsquo;s college decisions.
+        </p>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">HOPE vs. Zell: Impacts on College Enrollment, Persistence, and Completion</div>
+        <p class="abstract">
+          This paper estimates the impact of Georgia&rsquo;s HOPE Scholarship on college
+          enrollment, persistence, and degree completion. Using a regression discontinuity
+          design at the 3.0 GPA eligibility threshold linked to the National Student
+          Clearinghouse, I find that marginal eligibility increases on-time enrollment,
+          enrollment at mid-tier selective institutions, and short-term persistence. Enrollment
+          gains are primarily driven by low-income students who would otherwise forgo college,
+          while high-income students shift to in-state public institutions. The scholarship
+          increases degree attainment at in-state public four-year colleges by 30.5 percent,
+          generating net welfare gains for the State of Georgia.
+        </p>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
+        <p class="paper-meta">
+          with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
+        </p>
+        <p class="abstract">
+          This study examines the effect of state-mandated full-day kindergarten (FDK) expansion
+          on child maltreatment using NCANDS child-level data and NVSS mortality records.
+          Leveraging the staggered rollout of FDK adoption across states with advanced
+          difference-in-differences methods, we find that FDK policies lead to an increase of
+          3.5 physical abuse reports per 1,000 children&mdash;approximately 36% relative to the
+          baseline mean. The absence of an effect on fatalities suggests that FDK primarily
+          improves the detection of maltreatment rather than increasing its underlying incidence.
+          Supporting this interpretation, educator-filed physical abuse reports rise by
+          approximately 30%, reflecting enhanced detection capacity among teachers and school
+          staff. Furthermore, the observed increases in reports from parents and neighbors imply
+          that FDK may foster stronger community awareness and social support networks.
+        </p>
+      </div>
+    </div>
+
+    <div class="research-section">
+      <h2 class="section-heading">Work in Progress</h2>
+
+      <div class="wip-item">
+        <div class="wip-title">Gun Violence in School and the Teacher Workforce</div>
+      </div>
+
+      <div class="wip-item">
+        <div class="wip-title">Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes</div>
+        <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
+        <p class="abstract">
+          This study examines the impacts of non-structural student mobility on academic outcomes
+          in Georgia public schools. Using longitudinal administrative data covering three
+          9th-grade cohorts from kindergarten through high school, we analyze midyear and
+          nonstructural summer school moves, distinguishing by timing, type, and student
+          socioeconomic background.
+        </p>
+        <div class="paper-links">
+          <a class="paper-link" href="https://osf.io/kyx83/overview" target="_blank">[Pre-analysis Plan]</a>
+        </div>
+      </div>
+
+      <div class="wip-item">
+        <div class="wip-title">Attendance Recovery Bus Pilot</div>
+        <div class="wip-authors">with Tim R. Sass</div>
+      </div>
+
+      <div class="wip-item">
+        <div class="wip-title">Non-Structural Student Mobility and Long-Term Outcomes</div>
+        <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
+        <div class="paper-links">
+          <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">[Pre-analysis Plan]</a>
+        </div>
+      </div>
+
+      <div class="wip-item">
+        <div class="wip-title">Early Childhood Education, Childlessness, and Fertility</div>
+        <div class="wip-authors">
+          with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-section">
+      <h2 class="section-heading">Publications</h2>
+
+      <div class="paper">
+        <div class="paper-title">Attendance Recovery Bus Pilot</div>
+        <p class="paper-meta">with Tim R. Sass &middot; Georgia Policy Labs, 2025</p>
+        <div class="paper-links">
+          <a class="paper-link" href="https://kbg6787.github.io/cv/arb_report.pdf" target="_blank">[Report]</a>
+          <a class="paper-link" href="https://kbg6787.github.io/cv/fcs_absenteeism_brief.pdf" target="_blank">[Brief]</a>
+          <a class="paper-link" href="https://kbg6787.github.io/cv/arb_appendix.pdf" target="_blank">[Appendix]</a>
+          <a class="paper-link" href="https://www.11alive.com/video/news/gsu-professor-explains-rise-in-chronic-absenteeism/85-70655120-db29-4128-bd2f-de184188d4f3" target="_blank">[Media: 11Alive]</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">School Climate and Student Attendance in Fulton County Schools</div>
+        <p class="paper-meta">Georgia Policy Labs, 2025</p>
+        <div class="paper-links">
+          <a class="paper-link" href="https://kbg6787.github.io/cv/fcs_climate_report.pdf" target="_blank">[Report]</a>
+          <a class="paper-link" href="https://sdpconvening2025.sched.com/event/1yDBY/from-chronic-absenteeism-to-student-connectedness-safety-and-meaningful-engagement-a-deeper-look-in-fulton-county-schools-georgia" target="_blank">[Harvard SDP Convening]</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.75rem;">
+        <p class="predoc-label">Pre-Doctoral Publications (Korean)</p>
+        <p class="predoc-list">
+          Relationship between Home Ownership and Political Orientation,
+          <em>Korean Real Estate Review</em> (with Daehwan Kim)<br />
+          A Study on the Global Expansion of Companies and the Employment of Women,
+          <em>The Women's Studies</em> (with Daehwan Kim)
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════ TEACHING ════════════ -->
+  <div class="page" id="page-teaching">
+    <div class="teaching-section">
+      <h2 class="section-heading">Instructor of Record</h2>
+
+      <div class="course">
+        <div class="course-title">Economics of Cities</div>
+        <div class="course-sub">ECON 4300 &middot; Georgia State University &middot; Fall 2025</div>
+        <div class="course-stats">
+          <span class="course-stat">Class size: <strong>37</strong></span>
+          <span class="course-stat">Teaching evaluation: <strong>4.7 / 5.0</strong></span>
+        </div>
+        <div class="course-links">
+          <a class="course-link" href="https://kbg6787.github.io/cv/ECON_4300_Fall_2025.pdf" target="_blank">[Syllabus]</a>
+          <a class="course-link" href="https://kbg6787.github.io/cv/cities_2025.pdf" target="_blank">[Teaching Evaluation]</a>
+        </div>
+      </div>
+
+      <div class="course">
+        <div class="course-title">Principles of Macroeconomics</div>
+        <div class="course-sub">ECON 2105 &middot; Georgia State University &middot; Summer 2025</div>
+        <div class="course-stats">
+          <span class="course-stat">Class size: <strong>80</strong></span>
+          <span class="course-stat">Teaching evaluation: <strong>4.6 / 5.0</strong></span>
+        </div>
+        <div class="course-links">
+          <a class="course-link" href="https://kbg6787.github.io/cv/ECON2105_Syllabus_Summer2025.pdf" target="_blank">[Syllabus]</a>
+          <a class="course-link" href="https://kbg6787.github.io/cv/macro_sum_2025.pdf" target="_blank">[Teaching Evaluation]</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Bogyung Kim &middot; Georgia State University &middot; Updated 2026</footer>
+
+</div>
+
+<script>
+  function show(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    const btn = document.getElementById('btn-' + page);
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
