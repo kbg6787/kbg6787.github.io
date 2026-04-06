@@ -220,7 +220,13 @@
 }
     .toggle-abstract:hover { text-decoration: underline; }
 
-    .paper-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .4rem; }
+.paper-links { 
+  display: flex; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  margin-top: .4rem; 
+  margin-left: 15px; /* Matches the indent of your authors/abstract */
+}
     .paper-link { font-size: 12px; color: var(--blue); letter-spacing: .02em; }
     .paper-link:hover { text-decoration: underline; }
 
@@ -234,8 +240,8 @@
   font-size: 12.5px; 
   color: var(--text-2); 
   font-style: italic; 
-  margin-bottom: 0.35rem; 
-  margin-left: 15px; /* Adds the indent */
+  margin-bottom: .35rem; 
+  margin-left: 15px; /* The indent */
 }
     .wip-authors a { color: var(--blue); }
 
@@ -380,9 +386,9 @@
       </div>
 <div class="paper">
         <div class="paper-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
-        <p class="paper-meta">
+  <div class="wip-authors">
           with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
-        </p>
+        </div>
         <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ Abstract</button>
         <p class="abstract" id="abs3">
           This study examines the effect of state-mandated full-day kindergarten (FDK) expansion
@@ -406,14 +412,18 @@
       <div class="wip-item">
         <div class="wip-title">Gun Violence in School and the Teacher Workforce</div>
       </div>
-
+  
+      <div class="wip-item">
+        <div class="wip-title">Attendance Recovery Bus Pilot</div>
+        <div class="wip-authors">with Tim R. Sass</div>
+      </div>
+  
 <div class="wip-item">
   <div class="wip-title">Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes</div>
-  
   <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
-  
   <button class="toggle-abstract" onclick="toggleAbstract('abs4')">+ Abstract</button>
-  
+    <div class="paper-links">
+    <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">[Pre-analysis Plan]</a>
   <p class="abstract" id="abs4">
     This study examines the impacts of non-structural student mobility on academic outcomes
     in Georgia public schools. Using longitudinal administrative data covering three
@@ -421,28 +431,23 @@
     nonstructural summer school moves, distinguishing by timing, type, and student
     socioeconomic background.
   </p>
+   </div>
 </div>
 
-      <div class="wip-item">
-        <div class="wip-title">Attendance Recovery Bus Pilot</div>
-        <div class="wip-authors">with Tim R. Sass</div>
-      </div>
+<div class="wip-item">
+  <div class="wip-title">Non-Structural Student Mobility and Long-Term Outcomes</div>
+  <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
+  <div class="paper-links">
+    <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">[Pre-analysis Plan]</a>
+  </div>
+</div>
 
-      <div class="wip-item">
-        <div class="wip-title">Non-Structural Student Mobility and Long-Term Outcomes</div>
-        <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
-        <div class="paper-links">
-          <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">[Pre-analysis Plan]</a>
-        </div>
-      </div>
-
-      <div class="wip-item">
-        <div class="wip-title">Early Childhood Education, Childlessness, and Fertility</div>
-        <div class="wip-authors">
-          with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
-        </div>
-      </div>
-    </div>
+<div class="wip-item">
+  <div class="wip-title">Early Childhood Education, Childlessness, and Fertility</div>
+  <div class="wip-authors">
+    with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
+  </div>
+</div>
 
     <div class="research-section">
       <h2 class="section-heading">Publications</h2>
