@@ -219,6 +219,18 @@
     .paper-link { font-size: 12px; color: var(--blue); letter-spacing: .02em; }
     .paper-link:hover { text-decoration: underline; }
 
+.paper-status {
+  font-family: 'Lora', serif;
+  font-size: 10px;
+  font-weight: 500;
+  font-style: italic;         /* This adds the italics */
+  text-decoration: underline;
+  display: block;
+  margin-top: -2px;
+  margin-bottom: 0.5rem;
+  color: var(--text-2);       /* Optional: makes it a subtle grey to match your theme */
+}
+    
     /* ── WIP ── */
     .wip-item {
       margin-bottom: 1.25rem;
@@ -377,6 +389,8 @@
 
       <div class="wip-item">
         <div class="wip-title">HOPE vs. Zell: Impacts on College Enrollment, Persistence, and Completion</div>
+        </div>
+        <div class="paper-status">Submitted</div>
         <button class="toggle-abstract" onclick="toggleAbstract('abs2')">+ Abstract</button>
         <p class="abstract" id="abs2">
           This paper estimates the impact of Georgia&rsquo;s HOPE Scholarship on college
