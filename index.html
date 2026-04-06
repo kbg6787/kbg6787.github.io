@@ -286,12 +286,19 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 540px) {
-      .home-grid { grid-template-columns: 1fr; }
-      .photo-col { display: none; }
-      nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .nav-links { gap: 1.25rem; }
-    }
+@media (max-width: 540px) {
+  .home-grid { 
+    grid-template-columns: 1fr; 
+    text-align: center; /* Optional: centers text on mobile */
+  }
+  .photo-col { 
+    display: block; 
+    width: 180px;      /* Limits the size so it doesn't take over the screen */
+    margin: 0 auto 1.5rem; /* Centers the photo and adds space below it */
+  }
+  nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .nav-links { gap: 1.25rem; }
+}
   </style>
 </head>
 <body>
