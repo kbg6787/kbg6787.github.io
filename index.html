@@ -168,13 +168,13 @@
   margin-bottom: 2rem;
 }
     .paper:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .paper-title {
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.45;
-      margin-bottom: .3rem;
-    }
+.paper-title, .wip-title {
+  display: inline; /* Changed from block to inline */
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
     .jmp-badge {
       display: inline-block;
       font-size: 10px;
@@ -188,12 +188,13 @@
       font-weight: 500;
       border: 0.5px solid var(--green);
     }
-    .paper-meta {
-      font-size: 12.5px;
-      color: var(--text-2);
-      font-style: italic;
-      margin-bottom: .6rem;
-    }
+.paper-meta, .wip-authors {
+  display: inline; /* Changed from block to inline */
+  font-size: 12.5px;
+  color: var(--text-2);
+  font-style: italic;
+  margin-left: 8px; /* Adds a small gap after the title */
+}
     .paper-meta a { color: var(--blue); }
 
     /* ── COLLAPSIBLE ABSTRACT ── */
@@ -384,11 +385,10 @@
           generating net welfare gains for the State of Georgia.
         </p>
       </div>
-<div class="paper">
-        <div class="paper-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
-  <div class="wip-authors">
-          with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
-        </div>
+    <div class="paper">
+  <div class="paper-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
+  <div class="paper-meta">with<a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
+  </div>
         <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ Abstract</button>
         <p class="abstract" id="abs3">
           This study examines the effect of state-mandated full-day kindergarten (FDK) expansion
@@ -404,7 +404,7 @@
           that FDK may foster stronger community awareness and social support networks.
         </p>
       </div>
-</div> <!-- end research-section -->
+</div> 
 
 <div class="research-section">
   <h2 class="section-heading">Work in Progress</h2>
@@ -417,7 +417,8 @@
         <div class="wip-title">Attendance Recovery Bus Pilot</div>
         <div class="wip-authors">with Tim R. Sass</div>
       </div>
-  
+
+    
 <div class="wip-item">
   <div class="wip-title">Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes</div>
   <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
