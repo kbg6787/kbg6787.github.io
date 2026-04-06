@@ -214,11 +214,29 @@
       margin-bottom: .6rem;
     }
     .paper-meta a { color: var(--blue); }
-    .abstract {
+.abstract {
       font-size: 13.5px;
       line-height: 1.8;
       color: var(--text-2);
       margin-bottom: .75rem;
+      display: none;
+    }
+    .abstract.open {
+      display: block;
+    }
+    .toggle-abstract {
+      font-size: 12px;
+      color: var(--blue);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: 'Lora', serif;
+      margin-bottom: .75rem;
+      display: inline-block;
+    }
+    .toggle-abstract:hover {
+      text-decoration: underline;
     }
     .paper-links { display: flex; gap: 1rem; flex-wrap: wrap; }
     .paper-link {
@@ -358,12 +376,13 @@
     <div class="research-section">
       <h2 class="section-heading">Working Papers</h2>
 
-      <div class="paper">
-        <div class="paper-title">
-          Sibling Spillovers of Georgia&rsquo;s HOPE Scholarship
-          <span class="jmp-badge">Job Market Paper</span>
-        </div>
-        <p class="abstract">
+<div class="paper">
+  <div class="paper-title">
+    Sibling Spillovers of Georgia&rsquo;s HOPE Scholarship
+    <span class="jmp-badge">Job Market Paper</span>
+  </div>
+  <button class="toggle-abstract" onclick="toggleAbstract('abs1')">+ Abstract</button>
+  <p class="abstract" id="abs1">
           Does college financial aid generate benefits beyond the direct recipient? This paper
           investigates the intra-household spillover effects of Georgia&rsquo;s HOPE Scholarship
           on the postsecondary enrollment of younger siblings. Utilizing student-level
