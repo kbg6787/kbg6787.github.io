@@ -168,13 +168,11 @@
   margin-bottom: 2rem;
 }
     .paper:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.paper-title, .wip-title {
-  display: inline; /* Changed from block to inline */
-  font-family: 'Lora', serif;
+.paper-title, .wip-title, .paper-meta, .wip-authors {
+  display: inline; 
   font-size: 15px;
-  font-weight: 500;
-  line-height: 1.45;
 }
+
     .jmp-badge {
       display: inline-block;
       font-size: 10px;
@@ -189,22 +187,18 @@
       border: 0.5px solid var(--green);
     }
 .paper-meta, .wip-authors {
-  display: inline; /* Changed from block to inline */
-  font-size: 12.5px;
+  font-size: 13px;
   color: var(--text-2);
   font-style: italic;
-  margin-left: 8px; /* Adds a small gap after the title */
+  margin-left: 8px;
 }
     .paper-meta a { color: var(--blue); }
 
     /* ── COLLAPSIBLE ABSTRACT ── */
-.abstract {
-  font-size: 13.5px;
-  line-height: 1.8;
-  color: var(--text-2);
-  margin-bottom: 0.75rem;
-  display: none;
-  margin-left: 15px; /* Indents the abstract text when opened */
+.abstract, .toggle-abstract, .paper-links {
+  display: block; /* This forces the line break */
+  margin-left: 20px; /* This creates the indent you want */
+  margin-top: 0.5rem;
 }
     .abstract.open { display: block; }
 .toggle-abstract {
@@ -385,12 +379,13 @@
           generating net welfare gains for the State of Georgia.
         </p>
       </div>
+
     <div class="paper">
   <div class="paper-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
-  <div class="paper-meta">with<a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
-  </div>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ Abstract</button>
-        <p class="abstract" id="abs3">
+  <div class="paper-meta">with <a href="#">Yu-Ting Huang</a></div>
+  
+  <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ Abstract</button>
+  <p class="abstract" id="abs3">
           This study examines the effect of state-mandated full-day kindergarten (FDK) expansion
           on child maltreatment using NCANDS child-level data and NVSS mortality records.
           Leveraging the staggered rollout of FDK adoption across states with advanced
@@ -402,9 +397,8 @@
           approximately 30%, reflecting enhanced detection capacity among teachers and school
           staff. Furthermore, the observed increases in reports from parents and neighbors imply
           that FDK may foster stronger community awareness and social support networks.
-        </p>
-      </div>
-</div> 
+  </p>
+</div>
 
 <div class="research-section">
   <h2 class="section-heading">Work in Progress</h2>
