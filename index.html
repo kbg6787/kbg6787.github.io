@@ -223,21 +223,27 @@
   border: 1px solid #e0e0e0;     
   border-radius: 6px;        
 }
-    .abstract.open { display: block; }
-    .toggle-abstract {
-      font-size: 12px;
-      color: var(--text-2);
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      font-family: 'Lora', serif;
-      display: inline-block;
-      margin-top: -4px; 
-      margin-bottom: 0.2rem;
-      padding-left: 1rem;
-    }
-    .toggle-abstract:hover { text-decoration: underline; }
+.abstract.open { display: block; }
+.toggle-abstract {
+  font-size: 11px;
+  color: var(--text-2);
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--text-2);   
+  border-radius: 4px;              
+  padding: 1px 7px;               
+  font-family: 'Lora', serif;
+  display: inline-block;
+  margin-top: -4px;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;             
+  line-height: 1.6;
+  opacity: 0.75;                 
+  transition: opacity 0.2s;
+}
+.toggle-abstract:hover {
+  opacity: 1;
+}
 
     .paper-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: .2rem; padding-left: 1rem; ; text-decoration: underline; text-underline-offset: 2px;  }
     .paper-link { font-size: 12px; color: var(--blue); letter-spacing: .02em; }
