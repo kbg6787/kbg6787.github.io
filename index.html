@@ -20,7 +20,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #faf9f6; 
+      --bg: #fdfdfc; 
       --bg-2: #f2f0ea; 
       --bg-3: #e8e6de;
       --text: #1a1a18;
@@ -227,7 +227,7 @@
   margin-bottom: 2.5rem;
   padding-left: 0.5rem; 
   display: none;
-  background-color: #f5f5f5;    
+  background-color: #fdfdfc;    
   border: 1px solid #f0f0f0;     
   border-radius: 3px;        
 }
@@ -413,7 +413,7 @@
           Sibling Spillovers of Merit-Based Scholarships
           <span class="jmp-badge">(Job Market Paper)</span>
           </div>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs1')">[+] Abstract</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs1')">[+] ABSTRACT</button>
         <p class="abstract" id="abs1">
           Does college financial aid generate benefits beyond the direct recipient? This paper
           investigates the intra-household spillover effects of Georgia&rsquo;s HOPE and Zell Miller
@@ -430,7 +430,7 @@
       <div class="wip-item">
         <div class="wip-title">HOPE vs. Zell Miller: Impacts on College Enrollment, Persistence, and Completion</div>
         <div class="paper-status">[Submitted]</div>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs2')">[+] Abstract</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs2')">[+] ABSTRACT</button>
         <p class="abstract" id="abs2">
           This paper estimates the effects of Georgia&rsquo;s two merit-based aid programs, 
           the HOPE and Zell Miller Scholarships, on college enrollment, persistence, and degree 
@@ -450,7 +450,7 @@
         <p class="paper-meta">
           with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
         </p>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs3')">[+] Abstract</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs3')">[+] ABSTRACT</button>
         <p class="abstract" id="abs3">
           This study examines the impact of state-mandated full-day kindergarten (FDK) expansion on 
           child maltreatment using NCANDS child-level data, SID hospitalization records, and NVSS mortality 
@@ -472,7 +472,7 @@
         <div class="wip-title">
           Gun Violence in School and the Teacher Workforce
         </div>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs4')">[+] Abstract</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs4')">[+] ABSTRACT</button>
         <p class="abstract" id="abs4">
           TBD
         </p>
@@ -482,7 +482,7 @@
        <div class="wip-item">
         <div class="wip-title">Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes</div>
         <div class="wip-authors">with Kevin Fortner &amp; Natalie Pruitt</div>
-         <button class="toggle-abstract" onclick="toggleAbstract('abs5')">[+] Abstract</button>
+         <button class="toggle-abstract" onclick="toggleAbstract('abs5')">[+] ABSTRACT</button>
         <p class="abstract" id="abs5">
           This study examines the impacts of non-structural student mobility on academic outcomes
           in Georgia public schools. Using longitudinal administrative data covering three
@@ -599,7 +599,7 @@
     const el = document.getElementById(id);
     const btn = el.previousElementSibling;
     el.classList.toggle('open');
-    btn.textContent = el.classList.contains('open') ? '[−] Abstract' : '[+] Abstract';
+    btn.textContent = el.classList.contains('open') ? '[−] ABSTRACT' : '[+] ABSTRACT';
   }
 </script>
 </body>
