@@ -98,13 +98,13 @@
     .page.active { display: block; }
 
     /* ── HOME ── */
-    .home-grid {
-      display: grid;
-      grid-template-columns: 1fr 175px;
-      gap: 3rem;
-      align-items: start;
-      margin-bottom: 1.5rem;
-    }
+.home-grid {
+  display: grid;
+  grid-template-columns: 175px 1fr;  
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
     .photo-col img {
       width: 100%;
       border-radius: 6px;
@@ -365,12 +365,20 @@
   </nav>
 
   <!-- ════════════ HOME ════════════ -->
-  <div class="page active" id="page-home">
+<div class="page active" id="page-home">
+  <div style="background:var(--card-bg); border:0.5px solid var(--border-2); border-radius:var(--radius); padding:1.5rem 1.75rem; margin-bottom:2rem;">
     <div class="home-grid">
+
+      <!-- 왼쪽: 사진 -->
+      <div class="photo-col">
+        <img src="photo.jpeg" alt="Bogyung Kim" />
+      </div>
+
+      <!-- 오른쪽: 텍스트 -->
       <div>
         <h1 class="name">Bogyung Kim</h1>
         <p class="title-line">PhD Candidate in Economics &middot; Georgia State University</p>
-        
+
         <p class="bio">
           Hi! I am a PhD candidate in the Department of Economics at Georgia State University.
           I work as a Graduate Research Assistant at
@@ -380,7 +388,7 @@
           I will be on the market in the 2026&ndash;27 academic year. My job-market paper
           examines household-level spillovers from the financial aid program in higher education.
         </p>
-        
+
         <div class="ri-label">Research Interests</div>
         <div class="ri-tags">
           <span class="ri-tag">Economics of Education</span>
@@ -396,13 +404,10 @@
         </div>
       </div>
 
-      <!-- Right Column: Photo -->
-      <div class="photo-col">
-        <img src="photo.jpeg" alt="Bogyung Kim" />
-      </div>
     </div>
   </div>
-
+</div>
+  
 <div class="page" id="page-research">
 
   <div class="research-section">
