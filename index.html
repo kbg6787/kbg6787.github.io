@@ -209,6 +209,7 @@
   vertical-align: middle;
   letter-spacing: .04em;
   font-weight: 500;
+  font-style: italic;
 }
     .paper-meta {
       font-size: 12px;
@@ -411,8 +412,9 @@
       <div class="wip-item">
         <div class="wip-title">
           Sibling Spillovers of Merit-Based Scholarships
-          <span class="jmp-badge">(JMP)</span>
           </div>
+        <span class="jmp-badge">(JMP)</span>
+        <span style="color:var(--border-2); font-size:12px;">|</span>
         <button class="toggle-abstract" onclick="toggleAbstract('abs1')">[+] ABSTRACT</button>
         <p class="abstract" id="abs1">
           Does college financial aid generate benefits beyond the direct recipient? This paper
@@ -595,12 +597,12 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function toggleAbstract(id) {
-    const el = document.getElementById(id);
-    const btn = el.previousElementSibling;
-    el.classList.toggle('open');
-    btn.textContent = el.classList.contains('open') ? '[−] ABSTRACT' : '[+] ABSTRACT';
-  }
+function toggleAbstract(id) {
+  const el = document.getElementById(id);
+  const btn = document.querySelector(`[onclick="toggleAbstract('${id}')"]`);
+  el.classList.toggle('open');
+  btn.textContent = el.classList.contains('open') ? '[−] ABSTRACT' : '[+] ABSTRACT';
+}
 </script>
 </body>
 </html>
