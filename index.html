@@ -32,6 +32,7 @@
       --green: #0F6E56;
       --green-bg: #E1F5EE;
       --radius: 10px;
+      --card-bg: #ffffff;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -47,6 +48,7 @@
         --blue: #6aabf7;
         --green: #3ecfa0;
         --green-bg: #0a2e22;
+        --card-bg: #232320;
       }
     }
 
@@ -171,12 +173,19 @@
   font-family: 'Lora', serif;
   font-size: 16px;
   font-weight: 500;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   padding-bottom: .6rem;
   color: var(--text-3);
   border-bottom: 0.2px solid var(--border);
 }
-    .research-section { margin-bottom: 3rem; }
+.research-section {
+  margin-bottom: 2rem;
+  background: var(--card-bg);
+  border: 0.5px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+}
 
     /* ── PAPERS ── */
     .paper {
