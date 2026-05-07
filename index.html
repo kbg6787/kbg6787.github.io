@@ -418,7 +418,7 @@
       <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
         <span class="jmp-badge">Job Market Paper</span>
         <span style="color:var(--border-2); font-size:12px;">|</span>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs1')">[+] ABSTRACT</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs1')">+ ABSTRACT</button>
       </div>
       <p class="abstract" id="abs1">
         Does college financial aid generate benefits beyond the direct recipient? This paper
@@ -438,7 +438,7 @@
       <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
         <span class="paper-status" style="display:inline; margin:0; padding:0;">Under Review</span>
         <span style="color:var(--border-2); font-size:12px;">|</span>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs2')">[+] ABSTRACT</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs2')">+ ABSTRACT</button>
       </div>
       <p class="abstract" id="abs2">
         This paper examines how merit-based financial aid affects college enrollment, persistence, and graduation, 
@@ -459,7 +459,7 @@
           with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>
         </p>
         <span style="color:var(--border-2); font-size:11px;">|</span>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs3')">[+] ABSTRACT</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ ABSTRACT</button>
       </div>
       <p class="abstract" id="abs3">
         This study examines the impact of state-mandated full-day kindergarten (FDK) expansion on
@@ -482,7 +482,7 @@
     <div class="wip-item">
       <div class="wip-title">Gun Violence in School and the Teacher Workforce</div>
       <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
-        <button class="toggle-abstract" onclick="toggleAbstract('abs4')">[+] ABSTRACT</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs4')">+ ABSTRACT</button>
       </div>
       <p class="abstract" id="abs4">TBD</p>
     </div>
@@ -492,7 +492,7 @@
       <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem; flex-wrap: wrap;">
         <span class="wip-authors" style="margin:0; padding:0;">with Kevin Fortner &amp; Natalie Pruitt</span>
         <span style="color:var(--border-2); font-size:11px;">|</span>
-        <button class="toggle-abstract" onclick="toggleAbstract('abs5')">[+] ABSTRACT</button>
+        <button class="toggle-abstract" onclick="toggleAbstract('abs5')">+ ABSTRACT</button>
       </div>
       <p class="abstract" id="abs5">
         This study examines the impacts of non-structural student mobility on academic outcomes
@@ -620,7 +620,7 @@ function toggleAbstract(id) {
   const el = document.getElementById(id);
   const btn = document.querySelector(`[onclick="toggleAbstract('${id}')"]`);
   el.classList.toggle('open');
-  btn.textContent = el.classList.contains('open') ? '[−] ABSTRACT' : '[+] ABSTRACT';
+  btn.textContent = el.classList.contains('open') ? '− ABSTRACT' : '+ ABSTRACT';
 }
 </script>
 </body>
