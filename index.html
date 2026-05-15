@@ -160,9 +160,9 @@
   gap: 1rem; 
   flex-wrap: wrap; 
   align-items: center; 
-  justify-content: center; /* This adds the center alignment */
+  justify-content: center;
   margin-top: 1rem;
-  margin-bottom: 1rem; /* Optional: adds a little space above the row */
+  margin-bottom: 1rem;
 }
     .contact-link { font-size: 13px; color: var(--blue); }
     .contact-link:hover { text-decoration: underline; }
@@ -243,7 +243,7 @@
   padding: 0.5px 0.5px;
   font-family: 'Lora', serif;
   display: inline-block;
-  margin-top: 0px;
+  margin-top: 1px;
   margin-bottom: 0rem;
   margin-left: 0rem;
   line-height: 1.6;
@@ -294,36 +294,46 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-3); /* A slightly lighter grey */
+  color: var(--text-3);
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* Optional: Add a little extra space above the second sub-heading */
 .publication-sub-heading:not(:first-of-type) {
   margin-top: 2.5rem;
 }
-    
+
     /* ── TEACHING ── */
-    .teaching-section { margin-bottom: 2.5rem; }
-    .course {
-      margin-bottom: 1.25rem;
-      padding: 1.25rem 1.5rem;
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius);
-    }
     .course-title {
       font-family: 'Lora', serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 500;
-      margin-bottom: .2rem;
+      margin-bottom: .15rem;
     }
-    .course-sub { font-size: 13px; color: var(--text-2); margin-bottom: .65rem; }
-    .course-stats { display: flex; gap: 1.5rem; margin-bottom: .65rem; flex-wrap: wrap; }
-    .course-stat { font-size: 12.5px; color: var(--text-2); }
+    .course-sub {
+      font-size: 13px;
+      color: var(--text-2);
+      font-style: italic;
+      margin-bottom: 0rem;
+      padding-left: 0.5rem;
+    }
+    .course-stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-left: 0.5rem;
+      margin-top: 0.3rem;
+    }
+    .course-stat { font-size: 13px; color: var(--text-2); }
     .course-stat strong { color: var(--green); font-weight: 500; }
-    .course-links { display: flex; gap: .75rem; }
-    .course-link { font-size: 12px; color: var(--blue); }
+    .course-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: .2rem;
+      padding-left: 0.5rem;
+    }
+    .course-link { font-size: 13px; color: var(--blue); letter-spacing: .02em; }
     .course-link:hover { text-decoration: underline; }
 
     /* ── FOOTER ── */
@@ -339,12 +349,12 @@
 @media (max-width: 540px) {
   .home-grid { 
     grid-template-columns: 1fr; 
-    text-align: left; /* Optional: centers text on mobile */
+    text-align: left;
   }
   .photo-col { 
     display: block; 
-    width: 200px;      /* Limits the size so it doesn't take over the screen */
-    margin: 0 auto 1.5rem; /* Centers the photo and adds space below it */
+    width: 200px;
+    margin: 0 auto 1.5rem;
   }
   nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .nav-links { gap: 1.25rem; }
@@ -369,12 +379,10 @@
   <div style="background:var(--card-bg); border:0.5px solid var(--border-2); border-radius:var(--radius); padding:1.5rem 1.75rem; margin-bottom:2rem;">
     <div class="home-grid">
 
-      <!-- 왼쪽: 사진 -->
       <div class="photo-col">
         <img src="photo.jpeg" alt="Bogyung Kim" />
       </div>
 
-      <!-- 오른쪽: 텍스트 -->
       <div>
         <h1 class="name">Bogyung Kim</h1>
         <p class="title-line">PhD Candidate in Economics &middot; Georgia State University</p>
@@ -408,6 +416,7 @@
   </div>
 </div>
   
+  <!-- ════════════ RESEARCH ════════════ -->
 <div class="page" id="page-research">
 
   <div class="research-section">
@@ -442,9 +451,9 @@
       </div>
       <p class="abstract" id="abs2">
         This paper examines how merit-based financial aid affects college enrollment, persistence, and graduation, 
-        focusing on Georgia’s HOPE Scholarship. Using student-level administrative data linked to the National 
+        focusing on Georgia's HOPE Scholarship. Using student-level administrative data linked to the National 
         Student Clearinghouse records, I apply a regression discontinuity design around the GPA eligibility 
-        threshold. The study asks whether merit aid expands college access or primarily reshapes students’ 
+        threshold. The study asks whether merit aid expands college access or primarily reshapes students' 
         enrollment decisions, and how it influences longer-term outcomes. The paper contributes by providing 
         evidence using a within-state design, by documenting how impacts vary across income groups near the 
         eligibility margin, and by showing how generous, broad-based merit aid generates net welfare gains 
@@ -474,7 +483,7 @@
       </p>
     </div>
 
-  </div> <!-- /WORKING PAPERS -->
+  </div>
 
   <div class="research-section">
     <h2 class="section-heading">WORK IN PROGRESS</h2>
@@ -521,7 +530,7 @@
       </div>
     </div>
 
-  </div> <!-- /WORK IN PROGRESS -->
+  </div>
 
   <div class="research-section">
     <h2 class="section-heading">PUBLICATIONS</h2>
@@ -567,39 +576,44 @@
 
   </div> 
 
-</div> 
+</div>
   
   <!-- ════════════ TEACHING ════════════ -->
   <div class="page" id="page-teaching">
-    <div class="teaching-section">
-      <h2 class="section-heading">Instructor of Record</h2>
 
-      <div class="course">
-        <div class="course-title">Economics of Cities</div>
+    <div class="research-section">
+      <h2 class="section-heading">INSTRUCTOR OF RECORD</h2>
+
+      <div class="wip-item">
+        <div class="wip-title">Economics of Cities</div>
         <div class="course-sub">ECON 4300 &middot; Georgia State University &middot; Fall 2025</div>
         <div class="course-stats">
           <span class="course-stat">Class size: <strong>37</strong></span>
           <span class="course-stat">Teaching evaluation: <strong>4.7 / 5.0</strong></span>
         </div>
         <div class="course-links">
-          <a class="course-link" href="https://kbg6787.github.io/cv/ECON_4300_Fall_2025.pdf" target="_blank">[Syllabus]</a>
-          <a class="course-link" href="https://kbg6787.github.io/cv/cities_2025.pdf" target="_blank">[Teaching Evaluation]</a>
+          <a class="course-link" href="https://kbg6787.github.io/cv/ECON_4300_Fall_2025.pdf" target="_blank">Syllabus</a>
+          <span style="color:var(--border-2); font-size:12px;">|</span>
+          <a class="course-link" href="https://kbg6787.github.io/cv/cities_2025.pdf" target="_blank">Teaching Evaluation</a>
         </div>
       </div>
 
-      <div class="course">
-        <div class="course-title">Principles of Macroeconomics</div>
+      <div class="wip-item">
+        <div class="wip-title">Principles of Macroeconomics</div>
         <div class="course-sub">ECON 2105 &middot; Georgia State University &middot; Summer 2025</div>
         <div class="course-stats">
           <span class="course-stat">Class size: <strong>80</strong></span>
           <span class="course-stat">Teaching evaluation: <strong>4.6 / 5.0</strong></span>
         </div>
         <div class="course-links">
-          <a class="course-link" href="https://kbg6787.github.io/cv/ECON2105_Syllabus_Summer2025.pdf" target="_blank">[Syllabus]</a>
-          <a class="course-link" href="https://kbg6787.github.io/cv/macro_sum_2025.pdf" target="_blank">[Teaching Evaluation]</a>
+          <a class="course-link" href="https://kbg6787.github.io/cv/ECON2105_Syllabus_Summer2025.pdf" target="_blank">Syllabus</a>
+          <span style="color:var(--border-2); font-size:12px;">|</span>
+          <a class="course-link" href="https://kbg6787.github.io/cv/macro_sum_2025.pdf" target="_blank">Teaching Evaluation</a>
         </div>
       </div>
+
     </div>
+
   </div>
 
   <footer>bkim74@gsu.edu</footer>
