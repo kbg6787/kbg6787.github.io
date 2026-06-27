@@ -366,7 +366,7 @@
       <a href="#" id="btn-home" class="active" onclick="show('home');return false;">Home</a>
       <a href="#" id="btn-research" onclick="show('research');return false;">Research</a>
       <a href="#" id="btn-teaching" onclick="show('teaching');return false;">Teaching</a>
-      <a href="https://kbg6787.github.io/cv/Bogyung-Kim-052026.pdf" target="_blank" id="btn-cv">CV</a>
+      <a href="#" id="btn-cv" onclick="show('cv');return false;">CV</a>
     </div>
   </nav>
 
@@ -611,7 +611,41 @@
           <a class="course-link" href="https://kbg6787.github.io/cv/macro_sum_2025.pdf" target="_blank">Teaching Evaluation</a>
         </div>
       </div>
+      
+<!-- ── CV  ── -->
+<div class="page" id="page-cv">
+  <div class="research-section">
+    <h2 class="section-heading">CV</h2>
 
+    <p style="margin-bottom: 1.25rem;">
+      <a 
+        href="https://kbg6787.github.io/cv/Bogyung-Kim-052026.pdf" 
+        download="BogyungKim_CV.pdf"
+        target="_blank"
+        class="contact-link"
+        style="font-size: 15px; font-weight: 500;"
+      >
+        📄 Click here to download CV
+      </a>
+    </p>
+
+    <div style="border: 0.5px solid var(--border-2); border-radius: 6px; overflow: hidden;">
+      <iframe
+        src="https://kbg6787.github.io/cv/Bogyung-Kim-052026.pdf"
+        width="100%"
+        height="850px"
+        style="display: block; border: none;"
+        title="Bogyung Kim CV"
+      >
+        <p style="padding: 1rem; font-size: 14.5px; color: var(--text-2);">
+          Unable to display PDF.
+          <a href="https://kbg6787.github.io/cv/Bogyung-Kim-052026.pdf" target="_blank" class="contact-link">Open directly</a>
+        </p>
+      </iframe>
+    </div>
+
+  </div>
+</div>
     </div>
 
   </div>
