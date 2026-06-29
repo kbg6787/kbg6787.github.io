@@ -21,7 +21,7 @@
 
     :root {
       --bg: #ffffff; 
-      --bg-2: #f2f0ea; 
+      --bg-2: #fdfdfc; 
       --bg-3: #e8e6de;
       --text: #000000;
       --text-2: #999992;
@@ -236,13 +236,14 @@
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   padding-left: 0.9rem;
+  background: var(--bg-2);
   border-left: 2.5px solid var(--blue);
   border-radius: 0;
   display: none;
 }
 .abstract.open { display: block; }
 .toggle-abstract {
-  font-size: 14.5px;
+  font-size: 12.5px;
   letter-spacing: 0.08em;
   color: var(--text-2);
   cursor: pointer;
@@ -257,6 +258,7 @@
   line-height: 1.6;
   opacity: 1;
   transition: opacity 0.2s;
+  vertical-align: middle;
 }
 .toggle-abstract:hover {
   opacity: 0.75;
