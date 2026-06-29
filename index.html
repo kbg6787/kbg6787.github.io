@@ -236,6 +236,9 @@
   margin-bottom: 1rem;
   margin-top: 0.5rem;
   padding-left: 0.9rem;
+  padding-top: 0.5rem;     
+  padding-bottom: 0.5rem;    
+  background: var(--bg-2);  
   border-left: 2.5px solid var(--blue);
   border-radius: 0;
   display: none;
@@ -243,17 +246,13 @@
 .abstract.open { display: block; }
 .toggle-abstract {
   font-size: 14.5px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0em;
   color: var(--text-2);
   cursor: pointer;
   background: none;
   border: none;
-  padding: 0.5px 0.5px;
   font-family: 'Plus Jakarta Sans', serif;
   display: inline-block;
-  margin-top: 2px;
-  margin-bottom: 0rem;
-  margin-left: 0rem;
   line-height: 1.6;
   opacity: 1;
   transition: opacity 0.2s;
@@ -449,7 +448,7 @@
           <button class="toggle-abstract" onclick="toggleAbstract('abs1')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs1">
-          Draft and abstract available upon request.
+          Draft and abstract available upon request due to data usage agreement.
         </p>
       </div>
 
@@ -461,7 +460,7 @@
           <button class="toggle-abstract" onclick="toggleAbstract('abs2')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs2">
-          Draft and abstract available upon request.
+          Draft and abstract available upon request due to data usage agreement.
         </p>
       </div>
 
@@ -501,7 +500,7 @@
         <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
           <button class="toggle-abstract" onclick="toggleAbstract('abs4')">+ ABSTRACT</button>
         </div>
-        <p class="abstract" id="abs4">TBD</p>
+        <p class="abstract" id="abs4">Draft and abstract available upon request</p>
       </div>
 
       <div class="wip-item">
