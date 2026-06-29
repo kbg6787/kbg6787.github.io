@@ -4,7 +4,7 @@
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RB5YLQ7GSM"></script>
 <script>
-  window.dataLayer = window.data   Layer || [];
+  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
@@ -213,6 +213,21 @@
     }
     .paper-meta a { color: var(--text); }
 
+/* ── CO-AUTHOR INLINE TAG ── */
+.coauthor-inline {
+  font-size: 13px;
+  color: var(--text-2);
+  font-weight: 400;
+  margin-left: 0.4rem;
+}
+.coauthor-inline a {
+  color: var(--text-2);
+}
+.coauthor-inline a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
 /* ── COLLAPSIBLE ABSTRACT ── */
 .abstract {
   font-size: 14.5px;
@@ -360,7 +375,8 @@
   .paper-meta, .paper-link, .wip-authors,
   .course-sub, .course-stat, .course-link,
   .toggle-abstract, .ri-tag, .contact-link,
-  .paper-status, .publication-sub-heading { font-size: 13px; }
+  .paper-status, .publication-sub-heading,
+  .coauthor-inline { font-size: 12px; }
 }
   
   </style>
@@ -451,12 +467,11 @@
       </div>
 
       <div class="wip-item">
-        <div class="wip-title">Full-Day Kindergarten Mandates and Child Maltreatment</div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem; flex-wrap: wrap;">
-          <p class="paper-meta" style="margin:0; padding:0;">
-            (with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang)</a>
-          </p>
-          <span style="color:var(--text-3); font-size:14.5px;">|</span>
+        <div class="wip-title">
+          Full-Day Kindergarten Mandates and Child Maltreatment
+          <span class="coauthor-inline">(with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>)</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
           <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs3">
@@ -491,10 +506,11 @@
       </div>
 
       <div class="wip-item">
-        <div class="wip-title">Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes</div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem; flex-wrap: wrap;">
-          <span class="wip-authors" style="margin:0; padding:0;">(with Kevin Fortner &amp; Natalie Pruitt)</span>
-          <span style="color:var(--text-3); font-size:14.5px;">|</span>
+        <div class="wip-title">
+          Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes
+          <span class="coauthor-inline">(with Kevin Fortner &amp; Natalie Pruitt)</span>
+        </div>
+        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
           <button class="toggle-abstract" onclick="toggleAbstract('abs5')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs5">
@@ -507,20 +523,19 @@
       </div>
 
       <div class="wip-item">
-        <div class="wip-title">Non-Structural Student Mobility and Long-Term Outcomes</div>
+        <div class="wip-title">
+          Non-Structural Student Mobility and Long-Term Outcomes
+          <span class="coauthor-inline">(with Kevin Fortner &amp; Natalie Pruitt)</span>
+        </div>
         <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem; flex-wrap: wrap;">
-          <span class="wip-authors" style="margin:0; padding:0;">(with Kevin Fortner &amp; Natalie Pruitt)</span>
-          <span style="color:var(--text-3); font-size:14.5px;">|</span>
           <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">Pre-analysis Plan</a>
         </div>
       </div>
 
       <div class="wip-item">
-        <div class="wip-title">Early Childhood Education, Childlessness, and Fertility</div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem; flex-wrap: wrap;">
-          <p class="paper-meta" style="margin:0; padding:0;">
-            (with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang)</a>
-          </p>
+        <div class="wip-title">
+          Early Childhood Education, Childlessness, and Fertility
+          <span class="coauthor-inline">(with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>)</span>
         </div>
       </div>
 
@@ -532,8 +547,11 @@
       <div class="publication-sub-heading">Policy Reports</div>
 
       <div class="wip-item">
-        <div class="wip-title">Attendance Recovery Bus Pilot</div>
-        <div class="paper-meta">with Tim R. Sass, Georgia Policy Labs, 2025</div>
+        <div class="wip-title">
+          Attendance Recovery Bus Pilot
+          <span class="coauthor-inline">(with Tim R. Sass)</span>
+        </div>
+        <div class="paper-meta">Georgia Policy Labs, 2025</div>
         <div class="paper-links">
           <a class="paper-link" href="https://kbg6787.github.io/cv/arb_report.pdf" target="_blank">Report</a>
           <span style="color:var(--text-3); font-size:14.5px;">|</span>
@@ -559,13 +577,19 @@
       <div class="publication-sub-heading">Pre-Doctoral Publications (Korean)</div>
 
       <div class="wip-item">
-        <div class="wip-title">Relationship between Home Ownership and Political Orientation</div>
-        <div class="paper-meta">with Daehwan Kim, Korean Real Estate Review, 2021</div>
+        <div class="wip-title">
+          Relationship between Home Ownership and Political Orientation
+          <span class="coauthor-inline">(with Daehwan Kim)</span>
+        </div>
+        <div class="paper-meta">Korean Real Estate Review, 2021</div>
       </div>
 
       <div class="wip-item">
-        <div class="wip-title">A Study on the Global Expansion of Companies and the Employment of Women</div>
-        <div class="paper-meta">with Daehwan Kim, The Women's Studies, 2021</div>
+        <div class="wip-title">
+          A Study on the Global Expansion of Companies and the Employment of Women
+          <span class="coauthor-inline">(with Daehwan Kim)</span>
+        </div>
+        <div class="paper-meta">The Women's Studies, 2021</div>
       </div>
 
     </div>
