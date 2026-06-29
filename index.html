@@ -63,10 +63,8 @@
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ── LAYOUT ── */
     .site { max-width: 940px; margin: 0 auto; padding: 0.5rem 1.5rem 6rem; }
 
-    /* ── NAV ── */
     nav {
       display: flex;
       align-items: center;
@@ -92,11 +90,9 @@
       color: var(--text);
     }
 
-    /* ── PAGES ── */
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ── HOME ── */
 .home-grid {
   display: grid;
   grid-template-columns: 200px 1fr;  
@@ -164,7 +160,6 @@
     .contact-link:hover { text-decoration: underline; }
     .contact-sep { color: var(--text-3); }
 
-    /* ── SECTIONS ── */
 .section-heading {
   font-family: 'Plus Jakarta Sans', serif;
   font-size: 18px;
@@ -179,11 +174,11 @@
   margin-bottom: 2rem;
   background: var(--card-bg);
   border: none;
-  border-radius: var(--radius);
+  border: 0.5px solid var(--text-3);
+  border-radius: 6px;
   padding: 1.5rem 1.75rem;
 }
 
-    /* ── PAPERS ── */
     .paper {
       margin-bottom: 1rem;
     }
@@ -195,16 +190,7 @@
       line-height: 1.45;
       margin-bottom: .2rem;
     }
-.jmp-badge {
-  display: inline-block;
-  font-size: 14.5px;
-  padding: 0px 0px;
-  background: none;
-  margin-left: 0px;
-  vertical-align: middle;
-  letter-spacing: .0em;
-  font-weight: 500;
-}
+
     .paper-meta {
       font-size: 14.5px;
       color: var(--text);
@@ -213,7 +199,6 @@
     }
     .paper-meta a { color: var(--text); }
 
-/* ── CO-AUTHOR INLINE TAG ── */
 .coauthor-inline {
   font-size: 13px;
   color: var(--text-2);
@@ -228,7 +213,6 @@
   text-decoration: underline;
 }
 
-/* ── COLLAPSIBLE ABSTRACT ── */
 .abstract {
   font-size: 14.5px;
   line-height: 1.8;
@@ -278,7 +262,6 @@
   padding-left: 0.5rem;
 }
     
-    /* ── WIP ── */
     .wip-item {
       margin-bottom: 1.5rem; 
       margin-top: 0.5rem;
@@ -288,7 +271,6 @@
     .wip-authors { font-size: 14.5px; color: var(--text); margin-bottom: 0rem; padding-left: 0.5rem; }
     .wip-authors a { color: var(--blue); }
 
-    /* ── PRE-DOCTORAL ── */
     .predoc-label {
       font-size: 14.5px;
       color: var(--text-3);
@@ -313,7 +295,6 @@
   margin-top: 2.5rem;
 }
 
-    /* ── TEACHING ── */
     .course-title {
       font-family: 'Plus Jakarta Sans', serif;
       font-size: 16px;
@@ -345,18 +326,8 @@
     .course-link { font-size: 14.5px; color: var(--blue); letter-spacing: .02em; }
     .course-link:hover { text-decoration: underline; }
 
-    /* ── FOOTER ── */
-    footer {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      font-size: 14.5px;
-      color: var(--text-3);
-      text-align: center;
-    }
-
-/* ── RESPONSIVE ── */
 @media (max-width: 850px) {
-  .site { padding-left: 0.3rem; padding-right: 0.3rem; }
+  .site { padding-left: 0.2rem; padding-right: 0.2rem; }
   nav { flex-direction: column; align-items: flex-start; gap: 1rem; padding-left: 0.6rem; padding-right: 0.6rem; }
   .home-grid { 
     grid-template-columns: 1fr; 
