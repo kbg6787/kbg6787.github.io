@@ -263,6 +263,14 @@
   margin-bottom: 0rem;
   padding-left: 0.5rem;
 }
+  .status-row {
+  display: flex;
+  flex-wrap: wrap;    
+  align-items: baseline;
+  gap: 0.5rem;
+  padding-left: 0.5rem;
+  row-gap: 0.3rem;        
+}
     
     .wip-item {
       margin-bottom: 1.5rem; 
@@ -425,7 +433,7 @@
 
       <div class="wip-item">
         <div class="wip-title">Sibling Spillovers of Georgia's HOPE Scholarship</div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
+        <div class="status-row">
           <span class="paper-status" style="display:inline; margin:0; padding:0;"><em>Job Market Paper</em></span>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('abs1')">+ ABSTRACT</button>
@@ -437,7 +445,7 @@
 
       <div class="wip-item">
         <div class="wip-title">The Role of Georgia's HOPE Scholarship on College Enrollment, Persistence, and Completion</div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
+        <div class="status-row">
           <span class="paper-status" style="display:inline; margin:0; padding:0;"><em>Reject & Resubmit, Journal of Human Resources</em></span>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('abs2')">+ ABSTRACT</button>
@@ -452,7 +460,7 @@
           Full-Day Kindergarten Mandates and Child Maltreatment
           <span class="coauthor-inline">(with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>)</span>
         </div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
+        <div class="status-row">
           <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs3">
@@ -480,7 +488,7 @@
 
       <div class="wip-item">
         <div class="wip-title">Gun Violence in School and the Teacher Workforce</div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
+        <div class="status-row">
           <button class="toggle-abstract" onclick="toggleAbstract('abs4')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs4">Draft and abstract available upon request</p>
@@ -491,7 +499,7 @@
           Non-Structural Student Mobility: Patterns of Mobility and Student Outcomes
           <span class="coauthor-inline">(with Kevin Fortner &amp; Natalie Pruitt)</span>
         </div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem;">
+        <div class="status-row">
           <a class="paper-link" href="https://osf.io/kyx83/overview" target="_blank">Pre-Analysis Plan</a>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('abs5')">+ ABSTRACT</button>
@@ -510,7 +518,7 @@
           Non-Structural Student Mobility and Long-Term Outcomes
           <span class="coauthor-inline">(with Kevin Fortner &amp; Natalie Pruitt)</span>
         </div>
-        <div style="display:flex; align-items:baseline; gap:0.5rem; padding-left:0.5rem; flex-wrap: wrap;">
+        <div class="status-row">
           <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">Pre-Analysis Plan</a>
         </div>
       </div>
