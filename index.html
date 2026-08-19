@@ -7,23 +7,21 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-RB5YLQ7GSM');
 </script>
-  <meta charset="UTF-8" />   
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bogyung Kim
   </title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">  
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM Plex Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #ffffff; 
-      --bg-2: #fdfdfc; 
+      --bg: #ffffff;
+      --bg-2: #fdfdfc;
       --bg-3: #e8e6de;
       --text: #000000;
       --text-2: #999992;
@@ -36,7 +34,6 @@
       --radius: 6px;
       --card-bg: #ffffff;
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #1a1a18;
@@ -53,7 +50,6 @@
         --card-bg: #232320;
       }
     }
-
     html { scroll-behavior: smooth; }
     body {
       font-family: 'IBM Plex Sans', serif;
@@ -64,9 +60,7 @@
     }
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 2px; }
-
     .site { max-width: 940px; margin: 0 auto; padding: 0.5rem 1.5rem 6rem; }
-
     nav {
       display: flex;
       align-items: center;
@@ -91,13 +85,11 @@
     .nav-links a.active {
       color: var(--text);
     }
-
     .page { display: none; }
     .page.active { display: block; }
-
 .home-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;  
+  grid-template-columns: 200px 1fr;
   gap: 2.5rem;
   align-items: start;
   margin-bottom: 1.5rem;
@@ -123,7 +115,6 @@
     }
     .bio { font-size: 18px; line-height: 1.85; margin-bottom: 1.25rem; }
     .bio a { color: var(--blue); text-decoration: text-underline-offset: 2px; }
-
     .ri-label {
       font-size: 14.5px;
       letter-spacing: .09em;
@@ -140,7 +131,6 @@
       border: 0.5px solid var(--text-3);
       color: var(--text-2);
     }
-
     .market-note {
       font-size: 14.5px;
       line-height: 1.75;
@@ -151,17 +141,15 @@
       border-radius: 0 4px 4px 0;
       margin-bottom: 1.75rem;
     }
-
-    .contact-row { 
-  display: flex; 
-  gap: 1rem; 
-  flex-wrap: wrap; 
+    .contact-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-top: 0.5rem;
 }
     .contact-link { font-size: 14.5px; color: var(--blue); }
     .contact-link:hover { text-decoration: underline; }
     .contact-sep { font-size: 12.5px; color: var(--text-3); }
-
 .section-heading {
   font-family: 'IBM Plex Sans', serif;
   font-size: 18px;
@@ -180,7 +168,6 @@
   border-radius: 6px;
   padding: 1.5rem 1.75rem;
 }
-
     .paper {
       margin-bottom: 1rem;
     }
@@ -192,7 +179,6 @@
       line-height: 1.45;
       margin-bottom: .2rem;
     }
-
     .paper-meta {
       font-size: 14.5px;
       color: var(--text);
@@ -200,7 +186,6 @@
       padding-left: 0.5rem;
     }
     .paper-meta a { color: var(--text); }
-
 .coauthor-inline {
   font-size: 13px;
   color: var(--text-2);
@@ -214,7 +199,6 @@
   color: var(--text);
   text-decoration: underline;
 }
-
 .abstract {
   font-size: 14.5px;
   line-height: 1.8;
@@ -228,6 +212,7 @@
   display: none;
 }
 .abstract.open { display: block; }
+.abstract.open { padding-top: 0.75rem; padding-right: 0.9rem; padding-bottom: 0.75rem; }
 .toggle-abstract {
   font-size: 12.5px;
   letter-spacing: 0.03em;
@@ -249,38 +234,35 @@
 .toggle-abstract:hover {
   color: var(--blue);
 }
-
     .paper-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: .2rem; padding-left: 0.5rem;  }
     .paper-link { font-size: 14.5px; color: var(--blue); letter-spacing: .02em; }
     .paper-link:hover { text-decoration: underline; }
-
 .paper-status {
   font-family: 'IBM Plex Sans', serif;
   font-size: 14.5px;
   font-weight: 500;
-  font-style: italic;     
+  font-style: italic;
   display: block;
   margin-bottom: 0rem;
   padding-left: 0.5rem;
 }
   .status-row {
   display: flex;
-  flex-wrap: wrap;    
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 0.5rem;
   padding-left: 0.5rem;
-  row-gap: 0.3rem;        
+  row-gap: 0.3rem;
 }
-    
+
     .wip-item {
-      margin-bottom: 1.5rem; 
+      margin-bottom: 1.5rem;
       margin-top: 0.5rem;
     }
     .wip-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
     .wip-title { font-size: 16px; font-weight: 500; line-height: 1.45; margin-bottom: .15rem; color: var(--text); }
     .wip-authors { font-size: 14.5px; color: var(--text); margin-bottom: 0rem; padding-left: 0.5rem; }
     .wip-authors a { color: var(--blue); }
-
     .predoc-label {
       font-size: 14.5px;
       color: var(--text-3);
@@ -289,7 +271,6 @@
       margin-bottom: .6rem;
     }
     .predoc-list { font-size: 14.5px; color: var(--text-2); line-height: 1.9; }
-
     .publication-sub-heading {
   font-family: 'IBM Plex Sans', serif;
   font-size: 14.5px;
@@ -300,11 +281,9 @@
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .publication-sub-heading:not(:first-of-type) {
   margin-top: 2.5rem;
 }
-
     .course-title {
       font-family: 'IBM Plex Sans', serif;
       font-size: 16px;
@@ -335,17 +314,48 @@
     }
     .course-link { font-size: 14.5px; color: var(--blue); letter-spacing: .02em; }
     .course-link:hover { text-decoration: underline; }
-
+.eval-meta {
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 0.9rem;
+}
+.eval-group-title {
+  font-size: 12.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-3);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.eval-group-title:first-of-type { margin-top: 0; }
+.eval-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.eval-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.eval-label { flex: 1; }
+.eval-score {
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+}
 @media (max-width: 850px) {
   .site { padding-left: 0.3rem; padding-right: 0.3rem; }
   .research-section { padding: 1rem 1rem; }
   nav { flex-direction: column; align-items: flex-start; gap: 1rem; padding-left: 0.6rem; padding-right: 0.6rem; }
-  .home-grid { 
-    grid-template-columns: 1fr; 
+  .home-grid {
+    grid-template-columns: 1fr;
     text-align: left;
   }
-  .photo-col { 
-    display: block; 
+  .photo-col {
+    display: block;
     width: 180px;
     margin: 0 auto 0rem;
   }
@@ -361,13 +371,12 @@
   .paper-status, .publication-sub-heading,
   .coauthor-inline { font-size: 14px; }
 }
-    
-  
+
+
   </style>
 </head>
 <body>
 <div class="site">
-
   <nav>
     <span class="nav-name" onclick="show('home')">
   Bogyung Kim
@@ -379,45 +388,39 @@
       <a href="#" id="btn-cv" onclick="show('cv');return false;">CV</a>
     </div>
   </nav>
-
   <!-- ════════════ HOME ════════════ -->
   <div class="page active" id="page-home">
     <div style="background:var(--card-bg); border:0.5px solid var(--text-3); border-radius:var(--radius); padding:1.5rem 1.75rem; margin-bottom:2rem;">
       <div class="home-grid">
-
         <div class="photo-col">
           <img src="photo.jpeg" alt="Bogyung Kim" />
         </div>
-
         <div>
           <h1 class="name">
           Bogyung Kim
           </h1>
          <p class="title-line">
          PhD Candidate in Economics · Georgia State University
-          
-         </p>
 
+         </p>
 <p class="bio">
-            Hi! I am a PhD candidate in the Department of Economics at Georgia State University. 
+            Hi! I am a PhD candidate in the Department of Economics at Georgia State University.
             I am an applied microeconomist studying <strong>labor economics</strong> and the <strong> economics of education</strong>.
-  
+
           </p>
             <p class="bio">
             I work as a Graduate Research Assistant at
-            <a href="https://gpl.gsu.edu/" target="_blank">Georgia Policy Labs</a> 
+            <a href="https://gpl.gsu.edu/" target="_blank">Georgia Policy Labs</a>
             <img src="gsu-logo.png" alt="Georgia State University" style="height: 0.9em; vertical-align: middle; margin-left: 0.2rem; margin-right: 0.2rem">
-             and as a Research & Evaluation Fellow at 
+             and as a Research & Evaluation Fellow at
             <a href="https://achieveatlanta.org/about-us/" target="_blank">Achieve Atlanta</a>
             <img src="aatl-logo.png" alt="Achieve Atlanta" style="height: 1.1em; vertical-align: middle;">.
           </p>
-          
+
           <p class="bio">
             I will be on the market in the 2026&ndash;27 academic year. My job-market paper
             examines household-level spillovers from the financial aid program in higher education.
           </p>
-
-
           <div class="contact-row">
             <a class="contact-link" href="mailto:bkim74@student.gsu.edu">bkim74@student.gsu.edu</a>
             <span class="contact-sep">|</span>
@@ -426,17 +429,13 @@
             <a class="contact-link" href="http://www.linkedin.com/in/bogyung-kim-060636243" target="_blank">LinkedIn</a>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
   <!-- ════════════ RESEARCH ════════════ -->
   <div class="page" id="page-research">
-
     <div class="research-section">
       <h2 class="section-heading">WORKING PAPERS</h2>
-
       <div class="wip-item">
         <div class="wip-title">Sibling Spillovers of Georgia's HOPE Scholarship</div>
         <div class="status-row">
@@ -448,7 +447,6 @@
           Draft and abstract available upon request due to data usage agreement.
         </p>
       </div>
-
       <div class="wip-item">
         <div class="wip-title">The Role of Georgia's HOPE Scholarship on College Enrollment, Persistence, and Completion</div>
         <div class="status-row">
@@ -460,24 +458,23 @@
           Draft and abstract available upon request due to data usage agreement.
         </p>
       </div>
-
            <div class="wip-item">
         <div class="wip-title">Gun Violence in School and the Teacher Workforce</div>
         <div class="status-row">
           <button class="toggle-abstract" onclick="toggleAbstract('abs4')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs4">
-          In-school gun violence disrupts the broader learning environment, potentially undermining schools’ ability 
-          to retain teachers. How do school shootings affect teacher retention and mobility? Using longitudinal teacher 
-          employment records from North Carolina and school-shooting data from the Center for Homeland Defense and Security, 
-          I employ a difference-in-differences and event-study design comparing shooting-exposed schools with matched 
-          non-exposed schools. Teacher retention declines by 4 percentage points following a shooting, with teacher mobility 
-          increasing two years afterward and remaining elevated for up to seven years. These effects are concentrated in shootings 
-          involving deaths or injuries. The findings highlight the persistent costs of school shootings for the teacher workforce 
+          In-school gun violence disrupts the broader learning environment, potentially undermining schools’ ability
+          to retain teachers. How do school shootings affect teacher retention and mobility? Using longitudinal teacher
+          employment records from North Carolina and school-shooting data from the Center for Homeland Defense and Security,
+          I employ a difference-in-differences and event-study design comparing shooting-exposed schools with matched
+          non-exposed schools. Teacher retention declines by 4 percentage points following a shooting, with teacher mobility
+          increasing two years afterward and remaining elevated for up to seven years. These effects are concentrated in shootings
+          involving deaths or injuries. The findings highlight the persistent costs of school shootings for the teacher workforce
           and suggest that school safety is an important component of policies addressing teacher shortages.
         </p>
       </div>
-      
+
       <div class="wip-item">
         <div class="wip-title">
           Full-Day Kindergarten Mandates and Child Maltreatment
@@ -487,29 +484,25 @@
           <button class="toggle-abstract" onclick="toggleAbstract('abs3')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs3">
-          This study examines the effect of state-mandated full-day kindergarten (FDK) expansion on child 
-          maltreatment using the National Data Archive on Child Abuse and Neglect child file, 
-          State Inpatient Databases hospital discharge data, and National Vital Statistics System mortality 
-          records. Leveraging the staggered rollout of FDK adoption across states with 
-          difference-in-differences methods, we find that FDK led to an increase of 3.5 
-          physical abuse reports per 1,000 children, approximately 36% relative to the baseline mean. The 
-          absence of an effect on the share of substantiated physical abuse and fatalities suggests that 
-          FDK primarily improves maltreatment detection rather than increasing its underlying incidence. 
-          Supporting this interpretation, educator-filed physical abuse reports rise by approximately 30%, 
-          reflecting enhanced detection capacity among teachers and school staff, and potentially replacing 
-          reports from other professions. Furthermore, the observed increases in reports from parents and neighbors 
-          suggest that FDK may foster stronger community awareness and social support networks. Overall, 
-          this research provides new evidence on the broader benefits of early childhood education, particularly 
+          This study examines the effect of state-mandated full-day kindergarten (FDK) expansion on child
+          maltreatment using the National Data Archive on Child Abuse and Neglect child file,
+          State Inpatient Databases hospital discharge data, and National Vital Statistics System mortality
+          records. Leveraging the staggered rollout of FDK adoption across states with
+          difference-in-differences methods, we find that FDK led to an increase of 3.5
+          physical abuse reports per 1,000 children, approximately 36% relative to the baseline mean. The
+          absence of an effect on the share of substantiated physical abuse and fatalities suggests that
+          FDK primarily improves maltreatment detection rather than increasing its underlying incidence.
+          Supporting this interpretation, educator-filed physical abuse reports rise by approximately 30%,
+          reflecting enhanced detection capacity among teachers and school staff, and potentially replacing
+          reports from other professions. Furthermore, the observed increases in reports from parents and neighbors
+          suggest that FDK may foster stronger community awareness and social support networks. Overall,
+          this research provides new evidence on the broader benefits of early childhood education, particularly
           its role in strengthening child safety environments.
         </p>
       </div>
-
     </div>
-
     <div class="research-section">
       <h2 class="section-heading">WORKS IN PROGRESS</h2>
-
- 
 
       <div class="wip-item">
         <div class="wip-title">
@@ -529,7 +522,6 @@
           socioeconomic background.
         </p>
       </div>
-
       <div class="wip-item">
         <div class="wip-title">
           Non-Structural Student Mobility and Long-Term Outcomes
@@ -539,21 +531,16 @@
           <a class="paper-link" href="https://osf.io/fmv6x/overview" target="_blank">Pre-Analysis Plan</a>
         </div>
       </div>
-
       <div class="wip-item">
         <div class="wip-title">
           Early Childhood Education, Childlessness, and Fertility
           <span class="coauthor-inline">(with <a href="https://reinaythuang17.github.io/" target="_blank">Yu-Ting Huang</a>)</span>
         </div>
       </div>
-
     </div>
-
     <div class="research-section">
       <h2 class="section-heading">OTHER PUBLICATIONS</h2>
-
       <div class="publication-sub-heading">Policy Reports</div>
-
       <div class="wip-item">
         <div class="wip-title">
           Attendance Recovery Bus Pilot
@@ -571,7 +558,6 @@
           <a class="paper-link" href="https://www.11alive.com/video/news/gsu-professor-explains-rise-in-chronic-absenteeism/85-70655120-db29-4128-bd2f-de184188d4f3" target="_blank">Media Coverage: 11Alive</a>
         </div>
       </div>
-
       <div class="wip-item">
         <div class="wip-title">School Climate and Student Attendance in Fulton County Schools</div>
         <div class="paper-meta">Georgia Policy Labs, 2025</div>
@@ -583,52 +569,74 @@
       </div>
 </div>
   </div>
-
   <!-- ════════════ TEACHING ════════════ -->
   <div class="page" id="page-teaching">
-
     <div class="research-section">
       <h2 class="section-heading">INSTRUCTOR OF RECORD</h2>
 
       <div class="wip-item">
         <div class="wip-title">Economics of Cities</div>
         <div class="course-sub">ECON 4300 &middot; Georgia State University &middot; Fall 2025</div>
-        <div class="course-stats">
+        <div class="status-row">
           <span class="course-stat">Class size: <strong>37</strong></span>
+          <span style="color:var(--text-3); font-size:12.5px;">|</span>
+          <span class="course-stat">Overall evaluation: <strong>4.7 / 5.0</strong></span>
+          <span style="color:var(--text-3); font-size:12.5px;">|</span>
+          <button class="toggle-abstract" onclick="toggleAbstract('eval4300')">+ EVALUATION DETAILS</button>
+        </div>
+        <div class="abstract" id="eval4300">
+          <div class="eval-meta">Enrollment: 37 &middot; Respondents: 22 (59.5% response rate)</div>
+          <div class="eval-group-title">Instructor Effectiveness</div>
+          <div class="eval-grid">
+            <div class="eval-item"><span class="eval-label">Followed the plan for the course as established by the syllabus</span><span class="eval-score">4.8</span></div>
+            <div class="eval-item"><span class="eval-label">Explained the grading system clearly</span><span class="eval-score">4.7</span></div>
+            <div class="eval-item"><span class="eval-label">Was prepared for class</span><span class="eval-score">4.8</span></div>
+            <div class="eval-item"><span class="eval-label">Communicated effectively</span><span class="eval-score">4.6</span></div>
+            <div class="eval-item"><span class="eval-label">Was accessible to students</span><span class="eval-score">4.8</span></div>
+            <div class="eval-item"><span class="eval-label">Created an environment that helped students learn</span><span class="eval-score">4.5</span></div>
+            <div class="eval-item"><span class="eval-label">Feedback improved students' learning</span><span class="eval-score">4.6</span></div>
           </div>
-        <div class="course-stats">
-          <span class="course-stat">Teaching evaluation: <strong>4.7 / 5.0</strong></span>
         </div>
         <div class="course-links">
           <a class="course-link" href="https://kbg6787.github.io/cv/ECON_4300_Fall_2025.pdf" target="_blank">Syllabus</a>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <a class="course-link" href="https://kbg6787.github.io/cv/cities_2025.pdf" target="_blank">Teaching Evaluation</a>
+          <a class="course-link" href="https://kbg6787.github.io/cv/cities_2025.pdf" target="_blank">Full Teaching Evaluation</a>
         </div>
       </div>
 
       <div class="wip-item">
         <div class="wip-title">Principles of Macroeconomics</div>
         <div class="course-sub">ECON 2105 &middot; Georgia State University &middot; Summer 2025</div>
-        <div class="course-stats">
+        <div class="status-row">
           <span class="course-stat">Class size: <strong>80</strong></span>
+          <span style="color:var(--text-3); font-size:12.5px;">|</span>
+          <span class="course-stat">Overall evaluation: <strong>4.6 / 5.0</strong></span>
+          <span style="color:var(--text-3); font-size:12.5px;">|</span>
+          <button class="toggle-abstract" onclick="toggleAbstract('eval2105')">+ EVALUATION DETAILS</button>
+        </div>
+        <div class="abstract" id="eval2105">
+          <div class="eval-meta">Enrollment: 73 &middot; Respondents: 28 (38.4% response rate)</div>
+          <div class="eval-group-title">Instructor Effectiveness</div>
+          <div class="eval-grid">
+            <div class="eval-item"><span class="eval-label">Followed the plan for the course as established by the syllabus</span><span class="eval-score">4.5</span></div>
+            <div class="eval-item"><span class="eval-label">Explained the grading system clearly</span><span class="eval-score">4.6</span></div>
+            <div class="eval-item"><span class="eval-label">Was prepared for class</span><span class="eval-score">4.6</span></div>
+            <div class="eval-item"><span class="eval-label">Communicated effectively</span><span class="eval-score">4.6</span></div>
+            <div class="eval-item"><span class="eval-label">Was accessible to students</span><span class="eval-score">4.6</span></div>
+            <div class="eval-item"><span class="eval-label">Created an environment that helped students learn</span><span class="eval-score">4.6</span></div>
+            <div class="eval-item"><span class="eval-label">Feedback improved students' learning</span><span class="eval-score">4.6</span></div>
           </div>
-          <div class="course-stats">
-          <span class="course-stat">Teaching evaluation: <strong>4.6 / 5.0</strong></span>
         </div>
         <div class="course-links">
           <a class="course-link" href="https://kbg6787.github.io/cv/ECON2105_Syllabus_Summer2025.pdf" target="_blank">Syllabus</a>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <a class="course-link" href="https://kbg6787.github.io/cv/macro_sum_2025.pdf" target="_blank">Teaching Evaluation</a>
+          <a class="course-link" href="https://kbg6787.github.io/cv/macro_sum_2025.pdf" target="_blank">Full Teaching Evaluation</a>
         </div>
       </div>
-
     </div>
-
   </div>
-
   <div class="page" id="page-cv">
     <div class="research-section">
-
       <p style="margin-bottom: 1.25rem;">
         <a
           href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf"
@@ -640,7 +648,6 @@
           Click here to download CV
         </a>
       </p>
-
       <div style="border: 0.5px solid var(--border-2); border-radius: 6px; overflow: hidden;">
 <iframe
   src="https://docs.google.com/viewer?url=https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf&embedded=true"
@@ -655,12 +662,9 @@
           </p>
         </iframe>
       </div>
-
     </div>
   </div>
-
 </div>
-
 <script>
   function show(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -670,12 +674,12 @@
     if (btn) btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
   function toggleAbstract(id) {
     const el = document.getElementById(id);
     const btn = document.querySelector(`[onclick="toggleAbstract('${id}')"]`);
     el.classList.toggle('open');
-    btn.textContent = el.classList.contains('open') ? '− ABSTRACT' : '+ ABSTRACT';
+    const label = btn.textContent.replace(/^[+−]\s*/, '');
+    btn.textContent = (el.classList.contains('open') ? '− ' : '+ ') + label;
   }
 </script>
 </body>
