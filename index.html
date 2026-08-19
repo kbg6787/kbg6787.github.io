@@ -346,6 +346,61 @@
   color: var(--text);
   white-space: nowrap;
 }
+.eval-abstract { font-size: 13px; line-height: 1.7; }
+.eval-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.7rem;
+}
+.eval-table th, .eval-table td {
+  text-align: left;
+  padding: 4px 6px 4px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.eval-table th {
+  font-size: 10.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+.eval-table td.eval-num, .eval-table th.eval-num {
+  text-align: right;
+  white-space: nowrap;
+  padding-left: 14px;
+  padding-right: 0;
+  width: 1%;
+}
+.eval-table tr.eval-overall td {
+  font-weight: 500;
+  border-bottom: none;
+  border-top: 0.5px solid var(--border-2);
+  padding-top: 6px;
+}
+.eval-notes {
+  font-size: 11.5px;
+  color: var(--text-2);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.eval-quotes-title {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-3);
+  margin-bottom: 0.5rem;
+}
+.eval-quote {
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.65;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--border-2);
+  margin-bottom: 0.55rem;
+}
+.eval-quote:last-child { margin-bottom: 0; }
 @media (max-width: 850px) {
   .site { padding-left: 0.3rem; padding-right: 0.3rem; }
   .research-section { padding: 1rem 1rem; }
@@ -584,18 +639,32 @@
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('eval4300')">+ EVALUATION DETAILS</button>
         </div>
-        <div class="abstract" id="eval4300">
-          <div class="eval-meta">Enrollment: 37 &middot; Respondents: 22 (59.5% response rate)</div>
-          <div class="eval-group-title">Instructor Effectiveness</div>
-          <div class="eval-grid">
-            <div class="eval-item"><span class="eval-label">Followed the plan for the course as established by the syllabus</span><span class="eval-score">4.8</span></div>
-            <div class="eval-item"><span class="eval-label">Explained the grading system clearly</span><span class="eval-score">4.7</span></div>
-            <div class="eval-item"><span class="eval-label">Was prepared for class</span><span class="eval-score">4.8</span></div>
-            <div class="eval-item"><span class="eval-label">Communicated effectively</span><span class="eval-score">4.6</span></div>
-            <div class="eval-item"><span class="eval-label">Was accessible to students</span><span class="eval-score">4.8</span></div>
-            <div class="eval-item"><span class="eval-label">Created an environment that helped students learn</span><span class="eval-score">4.5</span></div>
-            <div class="eval-item"><span class="eval-label">Feedback improved students' learning</span><span class="eval-score">4.6</span></div>
-          </div>
+        <div class="abstract eval-abstract" id="eval4300">
+          <table class="eval-table">
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th class="eval-num">% Agree</th>
+                <th class="eval-num">Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>The instructor followed the plan for the course as established by the syllabus.</td><td class="eval-num">94.7%</td><td class="eval-num">4.78</td></tr>
+              <tr><td>The instructor explained the grading system clearly.</td><td class="eval-num">95.0%</td><td class="eval-num">4.70</td></tr>
+              <tr><td>The instructor was prepared for class (face-to-face and/or online).</td><td class="eval-num">100.0%</td><td class="eval-num">4.84</td></tr>
+              <tr><td>The instructor communicated effectively.</td><td class="eval-num">85.0%</td><td class="eval-num">4.55</td></tr>
+              <tr><td>The instructor was accessible to students.</td><td class="eval-num">95.0%</td><td class="eval-num">4.75</td></tr>
+              <tr><td>The instructor created an environment that helped students learn.</td><td class="eval-num">85.0%</td><td class="eval-num">4.50</td></tr>
+              <tr><td>The feedback I received from the instructor on my work improved my learning.</td><td class="eval-num">90.0%</td><td class="eval-num">4.55</td></tr>
+              <tr class="eval-overall"><td>Overall Average</td><td class="eval-num"></td><td class="eval-num">4.7/5</td></tr>
+            </tbody>
+          </table>
+          <div class="eval-notes">Total students enrolled: 37; responses received: 22. Score ranges from 5 (strongly agree) to 1 (strongly disagree).</div>
+          <div class="eval-quotes-title">Selected Student Comments</div>
+          <div class="eval-quote">&ldquo;The instructor was clearly very knowledgeable about the subject matter. Whenever anyone had any question, even one only tangentially related, Ms. Bogyung was always able to answer.&rdquo;</div>
+          <div class="eval-quote">&ldquo;She covered every topic that was on the exams. She let us know what to prepare and study for so we could be prepared.&rdquo;</div>
+          <div class="eval-quote">&ldquo;I loved that the instructor was very open to having office hours in order to go over questions or provide additional help.&rdquo;</div>
+          <div class="eval-quote">&ldquo;The professor worked to adjust to students as effectively as possible and was open to feedback throughout the course.&rdquo;</div>
         </div>
         <div class="course-links">
           <a class="course-link" href="https://kbg6787.github.io/cv/ECON_4300_Fall_2025.pdf" target="_blank">Syllabus</a>
@@ -614,18 +683,32 @@
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('eval2105')">+ EVALUATION DETAILS</button>
         </div>
-        <div class="abstract" id="eval2105">
-          <div class="eval-meta">Enrollment: 73 &middot; Respondents: 28 (38.4% response rate)</div>
-          <div class="eval-group-title">Instructor Effectiveness</div>
-          <div class="eval-grid">
-            <div class="eval-item"><span class="eval-label">Followed the plan for the course as established by the syllabus</span><span class="eval-score">4.5</span></div>
-            <div class="eval-item"><span class="eval-label">Explained the grading system clearly</span><span class="eval-score">4.6</span></div>
-            <div class="eval-item"><span class="eval-label">Was prepared for class</span><span class="eval-score">4.6</span></div>
-            <div class="eval-item"><span class="eval-label">Communicated effectively</span><span class="eval-score">4.6</span></div>
-            <div class="eval-item"><span class="eval-label">Was accessible to students</span><span class="eval-score">4.6</span></div>
-            <div class="eval-item"><span class="eval-label">Created an environment that helped students learn</span><span class="eval-score">4.6</span></div>
-            <div class="eval-item"><span class="eval-label">Feedback improved students' learning</span><span class="eval-score">4.6</span></div>
-          </div>
+        <div class="abstract eval-abstract" id="eval2105">
+          <table class="eval-table">
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th class="eval-num">% Agree</th>
+                <th class="eval-num">Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>The instructor followed the plan for the course as established by the syllabus.</td><td class="eval-num">89.5%</td><td class="eval-num">4.52</td></tr>
+              <tr><td>The instructor explained the grading system clearly.</td><td class="eval-num">90.0%</td><td class="eval-num">4.60</td></tr>
+              <tr><td>The instructor was prepared for class (face-to-face and/or online).</td><td class="eval-num">90.0%</td><td class="eval-num">4.60</td></tr>
+              <tr><td>The instructor communicated effectively.</td><td class="eval-num">90.0%</td><td class="eval-num">4.60</td></tr>
+              <tr><td>The instructor was accessible to students.</td><td class="eval-num">90.0%</td><td class="eval-num">4.55</td></tr>
+              <tr><td>The instructor created an environment that helped students learn.</td><td class="eval-num">90.0%</td><td class="eval-num">4.60</td></tr>
+              <tr><td>The feedback I received from the instructor on my work improved my learning.</td><td class="eval-num">90.0%</td><td class="eval-num">4.55</td></tr>
+              <tr class="eval-overall"><td>Overall Average</td><td class="eval-num"></td><td class="eval-num">4.57/5</td></tr>
+            </tbody>
+          </table>
+          <div class="eval-notes">Total students enrolled: 73; responses received: 28. Score ranges from 5 (strongly agree) to 1 (strongly disagree).</div>
+          <div class="eval-quotes-title">Selected Student Comments</div>
+          <div class="eval-quote">&ldquo;My professor was able to grade assignments in a timely manner.&rdquo;</div>
+          <div class="eval-quote">&ldquo;Clear communication, organizational skills.&rdquo;</div>
+          <div class="eval-quote">&ldquo;She responded to emails with clear instructions.&rdquo;</div>
+          <div class="eval-quote">&ldquo;I got to interact with other students through the discussion's posts.&rdquo;</div>
         </div>
         <div class="course-links">
           <a class="course-link" href="https://kbg6787.github.io/cv/ECON2105_Syllabus_Summer2025.pdf" target="_blank">Syllabus</a>
