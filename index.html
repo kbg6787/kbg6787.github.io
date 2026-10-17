@@ -112,8 +112,7 @@
   font-size: 14.5px;
   color: var(--blue);
   letter-spacing: .02em;
-  padding: 0.2rem 0.5rem;
-  line-height: 1.4;
+  padding: 0.3rem 0.5rem;
   border: 0.5px solid var(--blue);
   border-radius: 4px;
   background: var(--bg-2);
@@ -124,6 +123,14 @@
   color: var(--card-bg);
   text-decoration: none;
 }
+.photo-links a.is-pending {
+  color: var(--text-2);
+  border: 0.5px dashed var(--text-2);
+  background: transparent;
+  pointer-events: none;
+  cursor: default;
+}
+.photo-links .soon { font-size: 12px; }
     h1.name {
       font-family: var(--font-serif);
       font-size: 1.2rem;
@@ -461,6 +468,17 @@
   .paper-status, .publication-sub-heading,
   .coauthor-inline, .link-label, .photo-links a { font-size: 14px; }
 }
+/* 휴대폰: 한 컬럼 (사진 → 버튼 → 이름·소개) */
+@media (max-width: 600px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .photo-col {
+    width: 180px;
+    margin: 0 auto;
+  }
+}
 
   </style>
 </head>
@@ -485,7 +503,6 @@
           <img src="photo.jpeg" alt="Bogyung Kim" />
           <div class="photo-links">
             <a href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf" target="_blank" rel="noopener">CV</a>
-            <a href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf" target="_blank" rel="noopener">JMP (soon)</a>
             <a href="https://www.linkedin.com/in/bogyung-kim-060636243" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
