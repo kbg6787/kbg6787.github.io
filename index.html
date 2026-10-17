@@ -103,14 +103,25 @@
 .photo-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
+  gap: 0.4rem;
   margin-top: 0.75rem;
 }
 .photo-links a {
+  display: block;
+  text-align: center;
   font-size: 14.5px;
   color: var(--blue);
   letter-spacing: .02em;
+  padding: 0.3rem 0.5rem;
+  border: 0.5px solid var(--blue);
+  border-radius: 4px;
+  background: var(--bg-2);
+  transition: background .15s, color .15s;
+}
+.photo-links a:hover {
+  background: var(--blue);
+  color: var(--card-bg);
+  text-decoration: none;
 }
     h1.name {
       font-family: var(--font-serif);
