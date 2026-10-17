@@ -11,7 +11,7 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bogyung Kim</title> g
+  <title>Bogyung Kim</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -100,6 +100,18 @@
       border: 0.5px solid var(--border);
       display: block;
     }
+    .photo-links {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.photo-links a {
+  font-size: 14.5px;
+  color: var(--blue);
+  letter-spacing: .02em;
+}
     h1.name {
       font-family: var(--font-serif);
       font-size: 1.2rem;
@@ -462,10 +474,14 @@
   <div class="page active" id="page-home">
     <div style="background:var(--card-bg); border:0.5px solid var(--text-3); border-radius:var(--radius); padding:1.5rem 1.75rem; margin-bottom:2rem;">
       <div class="home-grid">
-        <div class="photo-col">
-          <img src="photo.jpeg" alt="Bogyung Kim" />
-        </div>
-        <div>
+<div class="photo-col">
+  <img src="photo.jpeg" alt="Bogyung Kim" />
+  <div class="photo-links">
+    <a href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf" target="_blank" rel="noopener">CV</a>
+    <span class="contact-sep">|</span>
+    <a href="https://www.linkedin.com/in/bogyung-kim-060636243" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div>
           <h1 class="name">
           Bogyung Kim
           </h1>
@@ -492,11 +508,6 @@
   <a class="contact-link" href="mailto:bkim74@student.gsu.edu">bkim74@student.gsu.edu</a>
   <span class="contact-sep">|</span>
   <a class="contact-link" href="mailto:bogyungkim.us@gmail.com">bogyungkim.us@gmail.com</a>
-</div>
-<div class="contact-row" style="margin-top: 0.2rem;">
-  <a class="contact-link" href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf" target="_blank">CV</a>
-  <span class="contact-sep">|</span>
-  <a class="contact-link" href="http://www.linkedin.com/in/bogyung-kim-060636243" target="_blank">LinkedIn</a>
 </div>
         </div>
       </div>
