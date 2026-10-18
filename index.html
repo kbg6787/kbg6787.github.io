@@ -104,10 +104,10 @@
 .photo-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.2rem;
   margin-top: 0.6rem;
-  text-align: center;
+  text-align: left;
 }
 .contact-address {
   font-size: 14.5px;
@@ -495,14 +495,24 @@
   .coauthor-inline, .link-label, .photo-links a, .contact-address, .doc-links a { font-size: 14px; }
 }
 
+/* 휴대폰: 사진 → 소개·CV/JMP → 연락처 */
 @media (max-width: 600px) {
   .home-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  .photo-col {
+  .photo-col { display: contents; }          /* 사진과 연락처를 따로 배치할 수 있게 풂 */
+  .photo-col img {
+    order: 1;
     width: 180px;
     margin: 0 auto;
+  }
+  .home-grid > div:not(.photo-col) { order: 2; }   /* 소개글 + View CV / JMP */
+  .photo-links {
+    order: 3;
+    margin-top: 0;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
