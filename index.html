@@ -97,7 +97,6 @@
     .photo-col img {
       width: 100%;
       border-radius: 6px;
-      border: 0.5px solid var(--border);
       display: block;
     }
 .photo-links {
@@ -147,6 +146,31 @@
     }
     .bio { font-size: 18px; line-height: 1.85; margin-bottom: 1.25rem; }
     .bio a { color: var(--blue); text-underline-offset: 2px; }
+    .jmp-block {
+      margin-top: 1.75rem;
+      padding-top: 0;
+    }
+    .jmp-label {
+      font-size: 14.5px;
+      letter-spacing: .06em;
+      font-variant-caps: small-caps;
+      color: var(--text-3);
+      margin-bottom: .35rem;
+    }
+    .jmp-title {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: .6rem;
+    }
+    .jmp-title a { color: var(--blue); }
+    .jmp-abstract {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .jmp-abstract-label { font-style: italic; color: var(--text-2); margin-right: .25rem; }
     .ri-label {
       font-size: 14.5px;
       letter-spacing: .09em;
@@ -193,13 +217,10 @@
   margin-bottom: 0.5rem;
   padding-bottom: .6rem;
   color: var(--text-3);
-  border-bottom: 0.2px solid var(--border);
 }
 .research-section {
   margin-bottom: 2rem;
   background: var(--card-bg);
-  border: 0.5px solid var(--text-3);
-  border-radius: 6px;
   padding: 1.5rem 1.75rem;
 }
 .research-section .section-heading:not(:first-child) {
@@ -294,7 +315,7 @@
 }
 
     .wip-item {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.9rem;
       margin-top: 0.5rem;
     }
     .wip-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
@@ -498,7 +519,7 @@
   </nav>
   <!-- ════════════ HOME ════════════ -->
   <div class="page active" id="page-home">
-    <div style="background:var(--card-bg); border:0.5px solid var(--text-3); border-radius:var(--radius); padding:1.5rem 1.75rem; margin-bottom:2rem;">
+    <div style="background:var(--card-bg); padding:1.5rem 1.75rem; margin-bottom:2rem;">
       <div class="home-grid">
         <div class="photo-col">
           <img src="photo.jpeg" alt="Bogyung Kim" />
@@ -529,6 +550,17 @@
           <p class="bio">
             I am on the academic job market in 2026&ndash;27.
           </p>
+
+          <!-- ── Job Market Paper ── -->
+          <div class="jmp-block">
+            <div class="jmp-label">Job Market Paper</div>
+            <!-- PDF 공개 후 아래 제목을 <a href="https://kbg6787.github.io/cv/Bogyung-Kim-JMP.pdf" target="_blank" rel="noopener">…</a>로 감싸면 제목이 링크가 됨 -->
+            <h2 class="jmp-title">Sibling Spillovers of Merit-Based Scholarships</h2>
+            <!-- 초안 abstract: 논문의 실제 abstract로 교체할 것 -->
+            <p class="jmp-abstract">
+              <span class="jmp-abstract-label">Abstract.</span>
+              Financial aid may shape college decisions beyond the direct recipient. 
+          </div>
         </div>
       </div>
     </div>
@@ -833,7 +865,7 @@
           Click here to download CV
         </a>
       </p>
-      <div style="border: 0.5px solid var(--border-2); border-radius: 6px; overflow: hidden;">
+      <div style="overflow: hidden;">
 <iframe
   src="https://docs.google.com/viewer?url=https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf&embedded=true"
   width="100%"
