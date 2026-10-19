@@ -101,14 +101,14 @@
       border-radius: 6px;
       display: block;
     }
-  .photo-links {
-    order: 3;
-    margin-top: 0.25rem;                     
-    padding-top: 0.5rem;                     
-    border-top: 0.5px solid var(--border-2);   
-    align-items: flex-start;
-    text-align: left;
-  }
+.photo-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin-top: 0.6rem;
+  text-align: left;
+}
 .contact-address {
   font-size: 14.5px;
   line-height: 1.5;
@@ -510,7 +510,9 @@
   .home-grid > div:not(.photo-col) { order: 2; }   /* 소개글 + View CV / JMP */
   .photo-links {
     order: 3;
-    margin-top: 0;
+    margin-top: 0.25rem;                        /* 버튼과 선 사이 간격 */
+    padding-top: 0.5rem;                        /* 선과 연락처 사이 간격 */
+    border-top: 0.5px solid var(--border-2);    /* 얇은 회색 선 */
     align-items: flex-start;
     text-align: left;
   }
