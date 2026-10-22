@@ -166,10 +166,8 @@
       color: var(--card-bg);
       text-decoration: none;
     }
+    /* 업로드 전: 모양은 그대로, 클릭만 막음 (리서치 섹션 PDF 배지와 동일) */
     .doc-links a.is-pending {
-      color: var(--text-2);
-      border: 0.5px dashed var(--text-2);
-      background: transparent;
       pointer-events: none;
       cursor: default;
     }
@@ -318,6 +316,7 @@
       padding: 0 6px;
       line-height: 1.6;
       vertical-align: middle;
+      white-space: nowrap;
       transition: background .15s, color .15s;
     }
     .pdf-badge:hover {
@@ -547,6 +546,12 @@
     align-items: flex-start;
     text-align: left;
   }
+
+  /* 휴대폰: 리서치 섹션 상태 줄(저널명 | PDF | ABSTRACT)이 줄바꿈 없이 이어지도록 */
+  #page-research .status-row { display: block; }
+  #page-research .status-row > * { display: inline; vertical-align: baseline; }
+  #page-research .status-row > .pdf-badge { display: inline-block; vertical-align: middle; }
+  #page-research .status-row > * + * { margin-left: 0.4rem; }
 }
 
   </style>
@@ -600,8 +605,9 @@
           <!-- ── CV / Job Market Paper ── -->
           <div class="doc-links">
             <a href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf" target="_blank" rel="noopener">View CV</a>
-            <a href="https://kbg6787.github.io/cv/Bogyung-Kim-JMP.pdf" target="_blank" rel="noopener"
-            aria-disabled="true" title="Available soon">Job Market Paper</a>
+            <!-- JMP 공개 후: class="is-pending", aria-disabled, tabindex 삭제 -->
+            <a class="is-pending" href="https://kbg6787.github.io/cv/Bogyung-Kim-JMP.pdf" target="_blank" rel="noopener"
+               aria-disabled="true" tabindex="-1">Job Market Paper</a>
           </div>
         </div>
       </div>
