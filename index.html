@@ -297,10 +297,36 @@
 .toggle-abstract:hover {
   color: var(--blue);
 }
-    .paper-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: .2rem; padding-left: 0.5rem;  }
+    .paper-links { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-top: .2rem; padding-left: 0.5rem;  }
     .paper-link { font-size: 14.5px; color: var(--blue); letter-spacing: .02em; }
     .paper-link:hover { text-decoration: underline; }
     .link-label { font-size: 14.5px; color: var(--text-2); letter-spacing: .02em; }
+
+    /* ── PDF 네모박스 배지 ── */
+    .pdf-badge {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: 11.5px;
+      letter-spacing: .06em;
+      color: var(--blue);
+      border: 0.5px solid var(--blue);
+      border-radius: 3px;
+      padding: 0 6px;
+      line-height: 1.6;
+      vertical-align: middle;
+      transition: background .15s, color .15s;
+    }
+    .pdf-badge:hover {
+      background: var(--blue);
+      color: var(--card-bg);
+      text-decoration: none;
+    }
+    /* 업로드 전: 모양은 그대로, 클릭만 막음 */
+    .pdf-badge.is-pending {
+      pointer-events: none;
+      cursor: default;
+    }
+
 .paper-status {
   font-family: var(--font-serif);
   font-size: 14.5px;
@@ -493,6 +519,7 @@
   .toggle-abstract, .ri-tag, .contact-link,
   .paper-status, .publication-sub-heading,
   .coauthor-inline, .link-label, .photo-links a, .contact-address, .doc-links a { font-size: 14px; }
+  .pdf-badge { font-size: 11px; }
 }
 
 /* 휴대폰: 사진 → 소개·CV/JMP → 연락처 */
@@ -589,6 +616,10 @@
         <div class="status-row">
           <span class="paper-status" style="display:inline; margin:0; padding:0;">Job Market Paper</span>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
+          <!-- PDF 공개 후: is-pending, aria-disabled, tabindex 삭제 -->
+          <a class="pdf-badge is-pending" href="https://kbg6787.github.io/cv/Bogyung-Kim-JMP.pdf"
+             target="_blank" rel="noopener" aria-disabled="true" tabindex="-1">PDF</a>
+          <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('abs1')">+ ABSTRACT</button>
         </div>
         <p class="abstract" id="abs1">
@@ -600,6 +631,10 @@
         <div class="wip-title">HOPE and Zell Miller Scholarships: Impacts on College Enrollment, Persistence, and Completion</div>
         <div class="status-row">
         <span class="paper-status" style="display:inline; margin:0; padding:0;">Reject &amp; Resubmit (Resubmitted), <em>Journal of Human Resources</em></span>
+          <span style="color:var(--text-3); font-size:12.5px;">|</span>
+          <!-- PDF 공개 후: is-pending, aria-disabled, tabindex 삭제 / 파일명은 실제 업로드 파일명으로 수정 -->
+          <a class="pdf-badge is-pending" href="https://kbg6787.github.io/cv/Kim_HOPE_ZellMiller.pdf"
+             target="_blank" rel="noopener" aria-disabled="true" tabindex="-1">PDF</a>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('abs2')">+ ABSTRACT</button>
         </div>
@@ -632,7 +667,7 @@
         </div>
         <div class="paper-links">
           <span class="link-label">For non-technical readers:</span>
-          <a class="paper-link" href="https://kbg6787.github.io/cv/arb_report.pdf"
+          <a class="pdf-badge" href="https://kbg6787.github.io/cv/arb_report.pdf"
              target="_blank" rel="noopener">Policy Report</a>
         </div>
         <div class="status-row">
@@ -724,11 +759,9 @@
         </div>
         <div class="paper-meta">Georgia Policy Labs, 2025</div>
         <div class="paper-links">
-          <a class="paper-link" href="https://kbg6787.github.io/cv/arb_report.pdf" target="_blank" rel="noopener">Report</a>
-          <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <a class="paper-link" href="https://kbg6787.github.io/cv/fcs_absenteeism_brief.pdf" target="_blank" rel="noopener">Brief</a>
-          <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <a class="paper-link" href="https://kbg6787.github.io/cv/arb_appendix.pdf" target="_blank" rel="noopener">Appendix</a>
+          <a class="pdf-badge" href="https://kbg6787.github.io/cv/arb_report.pdf" target="_blank" rel="noopener">Report</a>
+          <a class="pdf-badge" href="https://kbg6787.github.io/cv/fcs_absenteeism_brief.pdf" target="_blank" rel="noopener">Brief</a>
+          <a class="pdf-badge" href="https://kbg6787.github.io/cv/arb_appendix.pdf" target="_blank" rel="noopener">Appendix</a>
         </div>
         <div class="paper-links" style="margin-top:0.2rem;">
           <span class="link-label">Media Coverage:</span>
@@ -740,7 +773,7 @@
         <div class="wip-title">School Climate and Student Attendance in Fulton County Schools</div>
         <div class="paper-meta">Georgia Policy Labs, 2025</div>
         <div class="paper-links">
-          <a class="paper-link" href="https://kbg6787.github.io/cv/fcs_climate_report.pdf" target="_blank" rel="noopener">Report</a>
+          <a class="pdf-badge" href="https://kbg6787.github.io/cv/fcs_climate_report.pdf" target="_blank" rel="noopener">Report</a>
         </div>
         <div class="paper-links" style="margin-top:0.2rem;">
           <span class="link-label">Presentation with FCS Practitioners:</span>
