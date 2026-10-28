@@ -942,6 +942,16 @@
   </div>
 </div>
 <script>
+  /* ── GA4 추적 ──────────────────────────────────────────────
+     탭(Home/Research/Teaching/CV)을 바꿀 때마다 가상 페이지뷰를 보내
+     GA4 보고서의 Page path에서 /research, /teaching, /cv로 구분되게 함 */
+  const PAGE_TITLES = { home: 'Home', research: 'Research', teaching: 'Teaching', cv: 'CV' };
+  let currentPage = 'home';
+
+  function track(eventName, params) {
+    if (typeof gtag === 'function') gtag('event', eventName, params || {});
+  }
+
   function show(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
@@ -949,14 +959,49 @@
     const btn = document.getElementById('btn-' + page);
     if (btn) btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (page !== currentPage) {
+      currentPage = page;
+      const path = page === 'home' ? '/' : '/' + page;
+      track('page_view', {
+        page_title: 'Bogyung Kim | ' + (PAGE_TITLES[page] || page),
+        page_location: location.origin + path
+      });
+    }
   }
+
   function toggleAbstract(id) {
     const el = document.getElementById(id);
     const btn = document.querySelector(`[onclick="toggleAbstract('${id}')"]`);
     el.classList.toggle('open');
     const label = btn.textContent.replace(/^[+−]\s*/, '');
     btn.textContent = (el.classList.contains('open') ? '− ' : '+ ') + label;
+
+    /* 초록/강의평가를 펼칠 때만 기록 (접을 때는 기록 안 함) */
+    if (el.classList.contains('open')) {
+      const item = el.closest('.wip-item');
+      const titleEl = item && item.querySelector('.wip-title');
+      const title = titleEl ? titleEl.childNodes[0].textContent.trim() : id;
+      track('open_abstract', { item_title: title, item_id: id, section: currentPage });
+    }
   }
+
+  /* PDF·외부 링크 클릭 기록 (CV, JMP, 논문 PDF, 강의계획서 등) */
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    let fileName = '';
+    try { fileName = decodeURIComponent(new URL(href, location.href).pathname.split('/').pop()); } catch (err) {}
+    const isPdf = /\.pdf$/i.test(fileName);
+    track(isPdf ? 'pdf_click' : 'link_click', {
+      link_text: a.textContent.replace(/\s+/g, ' ').trim().slice(0, 100),
+      link_url: href,
+      file_name: isPdf ? fileName : undefined,
+      section: currentPage
+    });
+  });
 </script>
 </body>
 </html>
