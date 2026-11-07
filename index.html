@@ -145,6 +145,15 @@
     }
     .bio { font-size: 16px; line-height: 1.85; margin-bottom: 1.25rem; }
     .bio a { color: var(--blue); text-underline-offset: 2px; }
+    /* ── ★ NEW: 소개글의 Job Market Paper 링크 (항상 파란색 + 밑줄) ── */
+    .bio a.jmp-link {
+      color: var(--blue);
+      text-decoration: underline;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 3px;
+      transition: opacity .15s;
+    }
+    .bio a.jmp-link:hover { opacity: .65; }
     .doc-links {
       display: flex;
       flex-wrap: wrap;
@@ -612,25 +621,20 @@
           <h1 class="name">Bogyung Kim</h1>
           <p class="title-line">PhD Candidate in Economics · Georgia State University</p>
           <p class="bio">
-            I am an applied microeconomist studying <strong>education and labor economics</strong>. 
-            Using large-scale administrative data and quasi-experimental designs, I evaluate public investments in human capital, 
-            from college financial aid to the school environments that shape student and teacher outcomes.
+            Welcome! I am a PhD candidate in Economics at Georgia State University. I am an applied microeconomist studying <strong>education and labor economics</strong>.
           </p>
           <p class="bio">
             I am a Graduate Research Assistant at
-            <a href="https://gpl.gsu.edu/" target="_blank">Georgia Policy Labs</a>
+            <a href="https://gpl.gsu.edu/" target="_blank" rel="noopener">Georgia Policy Labs</a>
             and a Research &amp; Evaluation Fellow at
-            <a href="https://achieveatlanta.org/about-us/" target="_blank">Achieve Atlanta</a>.
+            <a href="https://achieveatlanta.org/about-us/" target="_blank" rel="noopener">Achieve Atlanta</a>.
           </p>
           <p class="bio">
-            I am on the 2026&ndash;27 job market.
+            <strong>I am on the 2026&ndash;27 job market.</strong> My
+            <a class="jmp-link" href="https://kbg6787.github.io/cv/Sibling%20Spillovers%20-%20Public.pdf" target="_blank" rel="noopener">Job Market Paper</a>
+            studies the enrollment spillovers of financial aid to younger siblings.
           </p>
 
-          <div class="doc-links">
-            <a href="https://kbg6787.github.io/cv/Bogyung-Kim-CV.pdf" target="_blank" rel="noopener">View CV</a>
-            <a href="https://kbg6787.github.io/cv/Sibling Spillovers - Public.pdf" target="_blank" rel="noopener"
-            >Job Market Paper</a>
-          </div>
         </div>
       </div>
     </div>
@@ -647,10 +651,10 @@
         <div class="status-row">
           <span class="paper-status" style="display:inline; margin:0; padding:0;">Job Market Paper</span>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <a class="icon-link" href="https://kbg6787.github.io/cv/Sibling Spillovers - Public.pdf"
+          <a class="icon-link" href="https://kbg6787.github.io/cv/Sibling%20Spillovers%20-%20Public.pdf"
              target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
           <!-- 슬라이드가 생기면 아래 주석을 풀고 주소만 바꾸면 됨
-          <a class="icon-link" href="https://kbg6787.github.io/cv/Sibling Spillovers - Slides.pdf"
+          <a class="icon-link" href="https://kbg6787.github.io/cv/Sibling%20Spillovers%20-%20Slides.pdf"
              target="_blank" rel="noopener"><i class="fa-regular fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
           -->
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
@@ -670,7 +674,7 @@
         <div class="status-row">
         <span class="paper-status" style="display:inline; margin:0; padding:0;">Reject and Resubmit at the Journal of Human Resources</span>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <a class="icon-link" href="https://kbg6787.github.io/cv/HOPE and Zell - Public_10222026.pdf"
+          <a class="icon-link" href="https://kbg6787.github.io/cv/HOPE%20and%20Zell%20-%20Public_10222026.pdf"
              target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <button class="toggle-abstract" onclick="toggleAbstract('abs2')">+ ABSTRACT</button>
