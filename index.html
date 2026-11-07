@@ -646,21 +646,17 @@
     <div class="research-section">
       <h2 class="section-heading">Working Papers</h2>
 
-      <div class="wip-item">
+            <div class="wip-item">
         <div class="wip-title">Sibling Spillovers of Merit-Based Scholarships</div>
         <div class="status-row">
           <span class="paper-status" style="display:inline; margin:0; padding:0;">Job Market Paper</span>
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
           <a class="icon-link" href="https://kbg6787.github.io/cv/Sibling%20Spillovers%20-%20Public.pdf"
              target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf" aria-hidden="true"></i>Paper</a>
-          <!-- 슬라이드가 생기면 아래 주석을 풀고 주소만 바꾸면 됨
-          <a class="icon-link" href="https://kbg6787.github.io/cv/Sibling%20Spillovers%20-%20Slides.pdf"
-             target="_blank" rel="noopener"><i class="fa-regular fa-file-powerpoint" aria-hidden="true"></i>Slides</a>
-          -->
           <span style="color:var(--text-3); font-size:12.5px;">|</span>
-          <button class="toggle-abstract" onclick="toggleAbstract('abs1')">+ ABSTRACT</button>
+          <button class="toggle-abstract" onclick="toggleAbstract('abs1')">&minus; ABSTRACT</button>  
         </div>
-        <p class="abstract" id="abs1">
+        <p class="abstract open" id="abs1">   <!-- ★ 변경: open 클래스 추가 -->
           I study whether an older sibling's eligibility for Georgia’s HOPE and Zell Miller Scholarships affects younger siblings' college enrollment. 
           Using administrative data from a Metro Atlanta school district and regression discontinuity designs at each GPA threshold, I find that an older
           sibling’s HOPE eligibility raises younger siblings' enrollment by 4.6 percentage points overall and by 16 percentage points in low-income households, 
