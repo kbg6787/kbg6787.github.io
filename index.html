@@ -98,6 +98,25 @@
   align-items: start;
   margin-bottom: 1.5rem;
 }
+
+/* ── ★ NEW: Research / Teaching 공통 레이아웃 (왼쪽 사진·연락처 + 오른쪽 본문) ── */
+.side-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;   /* Home의 .home-grid와 같은 비율 */
+  gap: 2.5rem;
+  align-items: start;
+  background: var(--card-bg);
+  padding: 1.5rem 1.75rem;            /* Home 카드와 같은 여백 → 사진 위치가 탭마다 일치 */
+  margin-bottom: 2rem;
+}
+.side-col {
+  position: sticky;                   /* 긴 Research 페이지를 스크롤해도 사진·연락처가 따라옴 */
+  top: 1rem;
+}
+.side-col img { width: 100%; border-radius: 6px; display: block; }
+.side-main { min-width: 0; }          /* 표·긴 링크가 칼럼 밖으로 넘치지 않게 */
+.side-layout .research-section { padding: 0; margin-bottom: 2.5rem; }
+.side-layout .research-section:last-child { margin-bottom: 0; }
     .photo-col img {
       width: 100%;
       border-radius: 6px;
@@ -543,6 +562,7 @@
     grid-template-columns: 120px 1fr;
     gap: 1.25rem;
   }
+  .side-layout { grid-template-columns: 120px 1fr; gap: 1.25rem; }
   .nav-links { gap: 1.25rem; }
   body { font-size: 15px; }
   .bio { font-size: 15px; }
@@ -579,6 +599,11 @@
     align-items: flex-start;
     text-align: left;
   }
+
+  /* ★ NEW 휴대폰: Research/Teaching은 사진·연락처 없이 지금과 동일하게 */
+  .side-layout { display: block; padding: 0; background: none; margin-bottom: 0; }
+  .side-col { display: none; }
+  .side-layout .research-section { padding: 1rem 1rem; margin-bottom: 2rem; }
 
   /* 휴대폰: 리서치 섹션 상태 줄(저널명 | Paper | ABSTRACT)이 줄바꿈 없이 이어지도록 */
   #page-research .status-row { display: block; }
@@ -640,6 +665,9 @@
   </div>
   <!-- ════════════ RESEARCH ════════════ -->
   <div class="page" id="page-research">
+  <div class="side-layout">
+    <aside class="side-col"></aside>   <!-- ★ NEW: Home의 사진·연락처가 자동으로 복사됨 -->
+    <div class="side-main">
 
     <!-- ===================== Working Papers ===================== -->
     <div class="research-section">
@@ -822,10 +850,15 @@
         </div>
       </div>
     </div>
+    </div>  <!-- /side-main -->
+  </div>    <!-- /side-layout -->
   </div>
 
   <!-- ════════════ TEACHING ════════════ -->
   <div class="page" id="page-teaching">
+  <div class="side-layout">
+    <aside class="side-col"></aside>
+    <div class="side-main">
     <div class="research-section">
       <h2 class="section-heading">Instructor of Record</h2>
 
@@ -937,6 +970,8 @@
         </div>
       </div>
     </div>
+    </div>  <!-- /side-main -->
+  </div>    <!-- /side-layout -->
   </div>
   <div class="page" id="page-cv">
     <div class="research-section">
@@ -972,6 +1007,16 @@
   /* ── GA4 추적 ──────────────────────────────────────────────
      탭(Home/Research/Teaching/CV)을 바꿀 때마다 가상 페이지뷰를 보내
      GA4 보고서의 Page path에서 /research, /teaching, /cv로 구분되게 함 */
+  /* ★ NEW: Home의 사진·연락처를 Research/Teaching 사이드바에 복사
+     → 연락처를 바꿀 때 Home 한 곳만 고치면 됨 */
+  (function () {
+    const src = document.querySelector('#page-home .photo-col');
+    if (!src) return;
+    document.querySelectorAll('.side-col').forEach(function (col) {
+      col.innerHTML = src.innerHTML;
+    });
+  })();
+
   const PAGE_TITLES = { home: 'Home', research: 'Research', teaching: 'Teaching', cv: 'CV' };
   let currentPage = 'home';
 
@@ -1004,7 +1049,6 @@
     const label = btn.textContent.replace(/^[+−]\s*/, '');
     btn.textContent = (el.classList.contains('open') ? '− ' : '+ ') + label;
 
-    /* 초록/강의평가를 펼칠 때만 기록 (접을 때는 기록 안 함) */
     if (el.classList.contains('open')) {
       const item = el.closest('.wip-item');
       const titleEl = item && item.querySelector('.wip-title');
@@ -1013,7 +1057,6 @@
     }
   }
 
-  /* PDF·외부 링크 클릭 기록 (CV, JMP, 논문 PDF, 강의계획서 등) */
   document.addEventListener('click', function (e) {
     const a = e.target.closest('a[href]');
     if (!a) return;
