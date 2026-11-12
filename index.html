@@ -54,7 +54,10 @@
         --jmp-bg: #2a2a27;
       }
     }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;   /* ★ NEW: 스크롤바 자리를 항상 확보 → 탭을 바꿔도 사진·칼럼 위치 고정 */
+    }
     body {
       font-family: var(--font-serif);
       background: var(--bg);
